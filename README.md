@@ -1,2 +1,2 @@
-# be-bewkoof.com
+# bewkoof.com
 Read me file here
