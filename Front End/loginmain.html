@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+    body {
+      background-image: url("https://img.freepik.com/free-vector/gradient-omnichannel-illustration_23-2149381424.jpg?w=1060&t=st=1677163169~exp=1677163769~hmac=0e9b7bdebdff4e3aa3784b2d784b39912df9b978d04d726e91ebc996439a42bd");
+    }
+
+    .input-taking {
+      max-width: 450px;
+      margin: 50px auto;
+      padding: 30px;
+      border: 2px solid #ccc;
+      background-color: #fff;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+    }
+
+    /* Style the form heading */
+    .input-taking h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #333;
+      text-shadow: 1px 1px 0px #fff;
+      text-align: center;
+    }
+
+    .typing {
+      display: block;
+      width: 95%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      font-size: 18px;
+      outline: none;
+      transition: border-color 0.2s ease-in-out;
+    }
+
+    .typing:focus {
+      border-color: #007bff;
+    }
+
+
+    #email {
+      background-color: #f8f8f8;
+    }
+
+
+    #password {
+      background-color: #f8f8f8;
+    }
+
+
+    #btn {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 20px;
+      cursor: pointer;
+      text-align: center;
+     
+      display: block;
+      margin: 0 auto;
+      padding-right: 25px;
+      padding-left: 25px;
+      padding-top: 5px ;
+      padding-bottom: 5px;
+      
+
+
+    }
+
+    /* Change the button background color on hover */
+    #btn:hover {
+      background-color: #0069d9;
+    }
+
+    /* Style the alert message */
+    .alert {
+      max-width: 500px;
+      margin: 50px auto;
+      padding: 20px;
+      border: 2px solid #ccc;
+      background-color: #fff;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+      font-size: 18px;
+      color: #333;
+      text-shadow: 1px 1px 0px #fff;
+      border-radius: 10px;
+    }
+
+    /* Style the success alert */
+    .alert-success {
+      background-color: #d4edda;
+      border-color: #c3e6cb;
+      color: #155724;
+    }
+
+    /* Style the error alert */
+    .alert-danger {
+      background-color: #f8d7da;
+      border-color: #f5c6cb;
+      color: #721c24;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="input-taking">
+    <h2>Login Portal</h2>
+    <form id="login-form">
+      <input class="typing" id="email" type="email" placeholder="Email" required>
+      <input class="typing" id="password" type="password" placeholder="Password" required>
+      <input id="btn" type="submit" value="LOGIN">
+    </form>
+  </div>
+
+</body>
+<script>
+  const loginForm = document.getElementById('login-form');
+
+  loginForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+
+    const email = emailInput.value.trim();
+    const password = passwordInput.value;
+
+    const storedUser = JSON.parse(localStorage.getItem('loggedInUser'));
+    if (!storedUser) {
+      alert('User not found. Please register first.');
+      return;
+    }
+
+
+    if (email !== storedUser.email || password !== storedUser.password) {
+      alert('Invalid email or password. Please try again.');
+      return;
+    }
+
+    alert('Login successful!');
+  });
+
+</script>
+
+</html>

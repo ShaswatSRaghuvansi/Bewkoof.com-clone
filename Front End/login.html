@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+ <style>
+  *{
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.login > div {
+  width: 50%;
+  padding: 30px 30px 0;
+    
+  
+}
+
+
+.login h1,
+.login h2 {
+
+  color: black;
+  text-align: center;
+}
+[type="tel"] {
+  background-color: white;
+}
+img {
+  background-color: #fffbec;
+  padding: 30px 30px 0;
+    width: 100%;
+    max-height: 1300px;
+}
+.input {
+  /* border: 1px solid red; */
+  text-align: center;
+  width: 100%;
+}
+h4 {
+  color: darkgray;
+  padding-bottom: 18px;
+}
+[type="tel"]:focus {
+  outline: none;
+}
+.input input {
+  width: 60%;
+  padding: 20px 0px;
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+#continue {
+  background-color: #42a2a2;
+  color: white;
+}
+button {
+  padding: 10px 5px;
+  width: 60%;
+  margin-bottom: 20px;
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: bold;
+  color: #615c5c;
+}
+[type="submit"] {
+  cursor: pointer;
+}
+#or-line {
+  display: flex;
+  width: 60%;
+  margin: auto;
+}
+.center-line {
+  border-bottom: 1px solid darkgray;
+  height: 1px;
+  width: 50%;
+  margin: auto;
+}
+#or {
+  margin: 20px 0;
+  width: 10%;
+}
+#upper-buttons button {
+  cursor: pointer;
+}
+#lower-buttons button {
+  width: 30%;
+}
+p {
+  width: 50%;
+  margin: auto;
+  font-size: 14px;
+
+  position: relative;
+  bottom: -30px;
+  color: darkgray;
+}
+
+p a {
+  color: #42a2a2;
+}
+
+
+ </style>
+  </head>
+  <body>
+
+    <div class="login">
+      <div>
+        <h1>Welcome to the world of Bewakoof!</h1>
+        <img
+          src="https://images.bewakoof.com/web/group-19-1617704502.png"
+          alt="Welcome to Bewakoof"
+        />
+      </div>
+
+      <div class="input">
+        <h2>Log in / Sign up</h2>
+        <h4>for Latest trends, exciting offers and everything Bewakoof!</h4>
+        <div class="form-fill">
+          <input type="tel" placeholder="Enter Mobile Number" />
+        </div>
+        <div class="form-fill">
+          <a href="regsiter.html"><input id="continue" type="submit" name="submit" value="CONTINUE" /></a>
+        </div>
+        <div id="or-line">
+          <div class="center-line"></div>
+          <div id="or">OR</div>
+          <div class="center-line"></div>
+        </div>
+        <div id="upper-buttons">
+          <a href="regsiter.html"><button>CONTINUE WITH MAIL</button></a>
+        </div>
+        <div id="lower-buttons">
+          <button>GOOGLE</button>
+          <button>FACEBOOK</button>
+        </div>
+        <p>
+          By creating an account or logging in, you agree with Bewakoof's
+          <a href="">Terms and Conditions</a> and <a href="">Privacy Policy</a>.
+        </p>
+      </div>
+    </div>
+  </body>
+  <script>
+function generateOTP() {
+  // Generate a random 6-digit number
+  const otp = Math.floor(100000 + Math.random() * 900000);
+
+  // Store the OTP in a sessionStorage variable
+  sessionStorage.setItem("otp", otp);
+
+  // Show the generated OTP in an alert box
+  alert(`Your OTP is: ${otp}`);
+
+  // Redirect to the register page
+  window.location.href = "register.html";
+}
+
+// Get the "CONTINUE" button element
+const continueBtn = document.getElementById("continue");
+
+// Add a click event listener to the "CONTINUE" button
+continueBtn.addEventListener("click", generateOTP);
+
+
+  </script>
+</html>
