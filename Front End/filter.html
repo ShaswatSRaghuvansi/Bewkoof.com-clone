@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bewakoof.com</title>
+    <style>
+
+        #navbar{
+            height: 100px;
+            border: 1px solid red;
+            margin-bottom: 30px;
+        }
+
+       #main{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            margin-left: 0px;
+        
+        }
+        #btn{
+            width: 300px;
+        }
+        #cont{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 35px;
+            text-align: center;
+            margin-right: 150px;
+        }
+        .card{
+           
+        
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        .card>img{
+            height: 250px;
+            width:250px;
+            
+        }
+
+        .cart{
+            background-color:#ff0081;
+            color: #fff;
+            height: 35px;
+            border: 0px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        
+        }
+        .cart:hover{
+            background-color:#ff0081;
+            color: #fff;
+            font-size: medium;
+        font-weight: bolder;
+        width: 100px;
+        }
+
+    
+
+    </style>
+   
+</head>
+<body>
+  
+    <div id="navbar">
+
+    </div>
+    <div>
+        <input type="text" id="search" placeholder="search by category">
+        <button id="search_btn">Search</button>
+
+    </div>
+
+    <div id="main">
+        <div id="btn">
+        <h1>Filter Your Products</h1>
+        <h4>Filter According to Price</h4>
+        <div id="filter">
+            <input type="number" id="lower" placeholder="Pirce from"/>
+            <input type="number" id="upper" placeholder="price to" />
+            <button id="filter-btn">Filter</button>
+          </div>
+        </div>
+
+        <div id="cont">
+       
+        </div>
+    </div>
+   
+</body>
+</html>
+<script>
+    var cont = document.getElementById("cont")
+  
+var data = [
+    {
+        Image:"https://images.bewakoof.com/t640/women-june-bug-i-m-bored-af-dress-546218-1674217408-1.jpg",
+        website:"Bewakoof@",
+        title:"Men's Purple Justice League Society Graphic Printed Oversized T-shirt",
+        price:299,
+        category:"t-shirt"
+      
+
+    },
+
+    {
+        Image:"https://images.bewakoof.com/t640/women-black-mickey-the-original-dress-546221-1674217449-1.jpg",
+        website:"Bewakoof@",
+        title:"Men's Purple Justice League Society Graphic Printed Oversized T-shirt",
+        price:349,
+        category:"t-shirt"
+
+    },
+
+    {
+        Image:"https://images.bewakoof.com/t640/men-s-maroon-chainsaw-man-graphic-printed-oversized-t-shirt-581386-1677044901-1.jpg",
+        website:"Bewakoof@",
+        title:"Men's Purple Justice League Society Graphic Printed Oversized T-shirt",
+        price:449,
+        category:"t-shirt"
+
+    },
+
+    {
+        Image:"https://images.bewakoof.com/t640/men-s-black-chainsaw-man-graphic-printed-oversized-t-shirt-580774-1677064596-1.jpg",
+        website:"Bewakoof@",
+        title:"Men's Black Chainsaw Man Graphic Printed Oversized T-shirt",
+        price:699,
+        category:"t-shirt"
+
+    },
+
+    {
+        Image:"https://images.bewakoof.com/t640/freakins-women-white-solid-flared-jeans-451927-1655917828-1.jpg",
+        website:"Bewakoof@",
+        title:"Men's Blue Justice League Society Graphic Printed Oversized T-shirt",
+        price:899,
+        category:"jeans"
+
+    },
+
+    {
+        Image:"https://images.bewakoof.com/t640/freakins-women-blue-solid-wide-leg-jeans-450593-1655917513-1.jpg",
+        website:"Bewakoof@",
+        title:"Men's Black Fly Me To The Moon Graphic Printed Oversized T-shirt",
+        price:599,
+        category:"jeans"
+
+    },
+
+    {
+        Image:"https://images.bewakoof.com/t640/men-s-white-karma-circles-typography-oversized-t-shirt-489752-1667491984-1.jpg",
+        website:"Bewakoof@",
+        title:"Men's White Karma Circles Typography Oversized T-shirt",
+        price:549,
+        category:"jeans"
+
+    },
+
+    {
+        Image:"https://images.bewakoof.com/t640/men-s-blue-oversized-fit-t-shirt-439435-1667519510-1.jpg",
+        website:"Bewakoof@",
+        title:"Men's Blue Oversized Fit T-shirt",
+        price:323,
+        category:"jeans"
+
+    },
+
+    {
+        Image:"https://images.bewakoof.com/t640/men-s-blue-peace-not-war-graphic-printed-oversized-t-shirt-479634-1667556897-1.jpg",
+        website:"Bewakoof@",
+        title:"Men's Blue Peace Not War Graphic Printed Oversized T-shirt",
+        price:569,
+        category:"shoes"
+
+    },
+
+    {
+        Image:"https://images.bewakoof.com/t640/mens-aop-oversize-t-shirt-507971-1670949699-1.jpg",
+        website:"Bewakoof@",
+        title:"Men's Green AOP Oversized T-shirt",
+        price:619,
+        category:"shoes"
+
+
+    },
+
+    {
+        Image:"https://images.bewakoof.com/t640/men-s-red-the-batman-oversized-fit-t-shirt-480316-1667507467-1.jpg",
+        website:"Bewakoof@",
+        title:"Men's Red batman t-shirts",
+        price:469,
+        category:"shoes"
+
+
+    },
+
+    {
+        Image:"https://images.bewakoof.com/t640/men-s-black-customizable-oversized-fit-t-shirt-504365-1667496998-1.jpg",
+        website:"Bewakoof@",
+        title:"Men's Black Customizable T-shit",
+        price:499,
+        category:"shoes"
+
+
+    }
+
+]
+
+var array = JSON.parse(localStorage.getItem("buy"))
+if(array===null){
+    array=[]
+}
+
+
+var filter= document.getElementById("filter-btn");
+filter.addEventListener("click",()=>{
+var lower = document.getElementById("lower");
+var upper = document.getElementById("upper")
+
+    let filtered = data.filter((ele)=>{
+     if(ele.price>=lower.value && ele.price<=upper.value){
+        return true
+     }else{
+        return false
+     }
+    })
+     display(filtered)
+ 
+
+})
+
+
+var search_btn = document.getElementById("search_btn")
+search_btn.addEventListener("click",()=>{
+   var search= document.getElementById("search")
+   var cat_filter= data.filter((ele)=>{
+    if(ele.category===search.value){
+        return true
+    }else{
+        return false
+    }
+   })
+  display(cat_filter)
+})
+
+
+
+// function display(obj)
+function display(allData){
+ cont.innerHTML=""
+allData.forEach(ele=>{
+ 
+    var div = document.createElement("div")
+    div.setAttribute("class","card")
+   var image = document.createElement("img");
+   image.setAttribute("src",ele.Image)
+
+   var shoes= document.createElement("p");
+   shoes.innerText=`category:-${ele.category}`
+
+   var h4 = document.createElement("h4");
+   h4.innerText=ele.website
+
+   var p= document.createElement("p")
+   p.innerText=ele.title
+
+   var price = document.createElement("h2");
+   price.innerText=ele.price
+
+   var cart_btn = document.createElement("button");
+   cart_btn.setAttribute("class","cart")
+   cart_btn.innerText="Add to Cart"
+   cart_btn.addEventListener("click",()=>{
+    array.push(ele)
+    localStorage.setItem("buy",JSON.stringify(array))
+    alert("Product added to Your cart")
+   })
+
+   div.append(image,h4,p,shoes,price,cart_btn)
+   cont.append(div)
+})
+}
+display(data)
+   </script>
