@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,500;1,200;1,400;1,500&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/f1eae3bf56.js" crossorigin="anonymous"></script>
+</head>
+<style>
+
+.mainhead {
+        width: 100%;
+        background: #ffffff;
+        height: 60px;
+        line-height: 52px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        position:fixed ;
+    
+      }
+      /* .small-mainheadrow{
+        background-color: aqua;
+      } */
+      .mainheadrow {
+        max-width: 1170px;
+        margin: 0 auto;
+        margin-top: 7px;
+        /* border: 1px solid red; */
+        display: flex;
+      }
+      .mainheadrow > div:nth-child(1) {
+        /* border: 1px solid red; */
+        width: 16%;
+      }
+      .mainheadrow > div:nth-child(1) img {
+        /* logo css */
+        height: 20px;
+        vertical-align: middle;
+        margin-bottom: 5px;
+      }
+    
+      .mainheadrow > div:nth-child(2) {
+        /* border: 1px solid red; */
+        width: 30%;
+        margin-left: 100px;
+      }
+      .mainheadrow > div:nth-child(3) {
+        /* border: 1px solid red; */
+        width: 25%;
+        display: flex;
+      }
+      .mainheadrow > div:nth-child(4) {
+        /* border: 1px solid red; */
+        width: 20%;
+        display: flex;
+      }
+      .mainheadrow > div:nth-child(3) > form {
+        width: 100%;
+        height: 50px;
+        text-align: left;
+        display: flex;
+      }
+      .mainheadrow > div:nth-child(3) input {
+        height: 80%;
+        width: 100%;
+        background: #eaeaea;
+        border: none;
+        border-radius: 7px;
+        margin-top: 2px;
+      }
+      .icon {
+        content: "\E90E";
+      }
+      a > i {
+        font-size: 22px;
+        margin-left: 20px;
+        color: rgb(43, 42, 42);
+      }
+      a {
+        font-size: 15px;
+        margin-left: 5px;
+        color: rgb(58, 55, 55);
+        text-decoration: none;
+      }
+      .fa,
+      .fas {
+        margin-top: 15px;
+        margin-right: 10px;
+      }
+      span {
+        font-size: 15px;
+        margin-right: 20px;
+        margin-top: 3px;
+        font-family: montserrat, sans-serif;
+        color: black;
+      }
+    
+      .fas,
+      .fa-grip-lines-vertical {
+        margin-top: 10px;
+      }
+      .fa-search {
+        margin-top: 15px;
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    #navbar{
+        height: 70px;
+     
+    }
+    #Cont{
+        height: 400px;
+        /* width: 500px; */
+      
+    }
+
+    #Cont{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 35px;
+            text-align: center;
+            margin-right: 150px;
+        }
+        .card{
+           
+        
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        
+        .card>img{
+            height: 250px;
+            width:250px;
+            
+        }
+        #total{
+            color: grey;
+        }
+
+        #coupon_btn{
+            
+            margin-bottom: 40px;
+        }
+        #cart_item{
+            text-align: center;
+        }
+        #Cont{
+            margin-left: 100px;
+        }
+        #coupon{
+            margin-left: 100px;
+        }
+        #total{
+            margin-left: 100px;
+        }
+</style>
+<body>
+    <div id="navbar">
+
+        
+   <header>
+    <div class="mainhead">
+      <!-- <div class="small-mainheadrow">
+      </div> -->
+      <div class="mainheadrow">
+        <div>
+         <a href=""><img id="logo_" src="./picture/logo.png.png" alt=""></a>
+        </div>
+        
+
+        <div>
+          <div style="display: inline-block">
+            <span>MEN</span>
+            <span>WOMEN</span>
+            <span>ACCESSORIES</span>
+          </div>
+        </div>
+        <div>
+          <form action="">
+            
+            <i id="search" class="fas fa-search"></i>
+            <input class="search2" type="text" placeholder="Search by product, category or collection" />
+            <i class="icon"></i>
+          </form>
+        </div>
+        <div>
+          <span><a><i class="fas fa-grip-lines-vertical"></i></a></span>
+          <div>
+            <a href="#"> <span id="tag"> Login</span> </a>
+          </div>
+
+          <span><a href="#" ><i class="far fa-heart"></i></a></span>
+          <span><a href="#" id="cart"><i class="fas fa-shopping-bag"></i></a></span>
+        </div>
+      </div>
+      <hr style="border: none; width: 100%;">  
+    </div>
+  </header>
+     
+    </div>
+
+
+
+
+
+   <h1 id="cart_item">Cart Item</h1>
+    <h2 id="total">Total price of cart:- <span id="total_price">0</span></h2>
+     <input type="text" id="coupon" placeholder="ADD COUPON">
+     <button id="coupon_btn">Submit</button>
+
+    <div id="Cont"></div>
+    <!-- <h1 ><span id="qunat">0</span></h1> -->
+   
+   
+</body>
+</html>
+<script>
+    var count =1;
+    var cont = document.getElementById("Cont")
+    var ls_data = JSON.parse(localStorage.getItem("buy"));
+    if(ls_data===null){
+        ls_data=[]
+    }
+
+    var total_price=0
+ 
+//    var sum=document.getElementById("total_price")
+// sum.innerText=total_price
+
+
+    function display(allData){
+ cont.innerHTML=""
+allData.forEach(ele=>{
+ 
+    var div = document.createElement("div")
+    div.setAttribute("class","card")
+   var image = document.createElement("img");
+   image.setAttribute("src",ele.Image)
+
+   var Rating= document.createElement("p");
+   Rating.innerText=`Rating:-${ele.Rating}`
+
+   var size= document.createElement("p");
+   size.innerText=`Size:-${ele.size}`
+
+   var shoes= document.createElement("p");
+   shoes.innerText=`category:-${ele.category}`
+
+   var h4 = document.createElement("h4");
+   h4.innerText=ele.website
+
+   var p= document.createElement("p")
+   p.innerText=ele.title
+
+   var price = document.createElement("h2");
+   price.innerText=`$${ele.price}`
+
+   var add = document.createElement("h1");
+   add.innerText=count
+   total_price=total_price+ele.price
+
+   var btn1= document.createElement("button")
+   btn1.innerHTML="+"
+   btn1.addEventListener("click",()=>{
+    // console.log("yes")
+    count++
+    add.innerText=count
+    var sum=document.getElementById("total_price")
+     sum.innerText=total_price+ele.price
+    total_price=total_price+ele.price
+    // console.log(total_price)
+   })
+  
+
+   var btn2= document.createElement("button")
+   btn2.innerHTML="-"
+   btn2.addEventListener("click",()=>{
+    // count=1
+    if(count>1){
+        count--
+        add.innerText=count
+    var sum=document.getElementById("total_price")
+     sum.innerText=total_price-ele.price
+    total_price=total_price-ele.price
+    }
+
+    // add.innerText=count
+    // var sum=document.getElementById("total_price")
+    //  sum.innerText=total_price-ele.price
+    // total_price=total_price-ele.price
+   })
+
+  
+    // console.log(count)
+
+  
+
+  
+  
+   
+
+   div.append(image,shoes,price,btn1,btn2,add)
+   cont.append(div)
+})
+}
+
+display(ls_data)
+
+var sum=document.getElementById("total_price")
+sum.innerText=total_price
+
+var coupon= document.getElementById("coupon");
+var submit_coupon = document.getElementById("coupon_btn")
+
+submit_coupon.addEventListener("click",()=>{
+  if(coupon.value==="Yash30"){
+    var x = (Math.floor(total_price*70/100))
+    console.log(x)
+    sum.innerText=x
+  }
+})
+
+// console.log(coupon.value)
+
+    
+</script>

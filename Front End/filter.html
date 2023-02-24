@@ -5,11 +5,118 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bewakoof.com</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,500;1,200;1,400;1,500&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/f1eae3bf56.js" crossorigin="anonymous"></script>
     <style>
+    .mainhead {
+        width: 100%;
+        background: #ffffff;
+        height: 60px;
+        line-height: 52px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        position:fixed ;
+    
+      }
+      /* .small-mainheadrow{
+        background-color: aqua;
+      } */
+      .mainheadrow {
+        max-width: 1170px;
+        margin: 0 auto;
+        margin-top: 7px;
+        /* border: 1px solid red; */
+        display: flex;
+      }
+      .mainheadrow > div:nth-child(1) {
+        /* border: 1px solid red; */
+        width: 16%;
+      }
+      .mainheadrow > div:nth-child(1) img {
+        /* logo css */
+        height: 20px;
+        vertical-align: middle;
+        margin-bottom: 5px;
+      }
+    
+      .mainheadrow > div:nth-child(2) {
+        /* border: 1px solid red; */
+        width: 30%;
+        margin-left: 100px;
+      }
+      .mainheadrow > div:nth-child(3) {
+        /* border: 1px solid red; */
+        width: 25%;
+        display: flex;
+      }
+      .mainheadrow > div:nth-child(4) {
+        /* border: 1px solid red; */
+        width: 20%;
+        display: flex;
+      }
+      .mainheadrow > div:nth-child(3) > form {
+        width: 100%;
+        height: 50px;
+        text-align: left;
+        display: flex;
+      }
+      .mainheadrow > div:nth-child(3) input {
+        height: 80%;
+        width: 100%;
+        background: #eaeaea;
+        border: none;
+        border-radius: 7px;
+        margin-top: 2px;
+      }
+      .icon {
+        content: "\E90E";
+      }
+      a > i {
+        font-size: 22px;
+        margin-left: 20px;
+        color: rgb(43, 42, 42);
+      }
+      a {
+        font-size: 15px;
+        margin-left: 5px;
+        color: rgb(58, 55, 55);
+        text-decoration: none;
+      }
+      .fa,
+      .fas {
+        margin-top: 15px;
+        margin-right: 10px;
+      }
+      span {
+        font-size: 15px;
+        margin-right: 20px;
+        margin-top: 3px;
+        font-family: montserrat, sans-serif;
+        color: black;
+      }
+    
+      .fas,
+      .fa-grip-lines-vertical {
+        margin-top: 10px;
+      }
+      .fa-search {
+        margin-top: 15px;
+      }
+
+
+
+
+
+
+
+
+
+
+
+
 
         #navbar{
             height: 100px;
-            border: 1px solid red;
+            /* border: 1px solid red; */
             margin-bottom: 30px;
         }
 
@@ -21,6 +128,12 @@
         }
         #btn{
             width: 300px;
+            margin-right: 50px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius: 10px;
+            text-align: center;
+            height: 400px;
+            /* background-color: rgb(211, 211, 20); */
         }
         #cont{
             display: grid;
@@ -58,6 +171,58 @@
         width: 100px;
         }
 
+        #searh_card{
+            /* width: 400px; */
+            height: 100px;
+            
+            margin-left: 40%;
+        }
+        #search1{
+            height: 40px;
+            width: 250px;
+            text-align: center;
+        }
+
+        #search_btn{
+            height: 45px;
+            width: 81px;
+            text-align: center;
+        }
+
+        #search_btn:hover{
+            background-color:yellow;
+           color: red;
+        
+        }
+
+        #btn>h4{
+            color: grey;
+        }
+        #filter-btn{
+            width: 170px;
+            margin-bottom: 30px;
+        
+        }
+
+        #filter-btn:hover{
+            background-color:yellow;
+           color: red;
+        
+        }
+
+        #sort_rating{
+            width: 175px;
+            height: 40px;
+            margin-bottom: 20px;
+          
+        }
+        #sort_size{
+            width: 175px;
+            height: 40px;
+            margin-bottom: 20px;
+        }
+
+
     
 
     </style>
@@ -66,29 +231,97 @@
 <body>
   
     <div id="navbar">
+   <!-- <button id="cart">Cart</button> -->
 
+   <header>
+    <div class="mainhead">
+      <!-- <div class="small-mainheadrow">
+      </div> -->
+      <div class="mainheadrow">
+        <div>
+         <a href=""><img id="logo_" src="./picture/logo.png.png" alt=""></a>
+        </div>
+        
+
+        <div>
+          <div style="display: inline-block">
+            <span>MEN</span>
+            <span>WOMEN</span>
+            <span>ACCESSORIES</span>
+          </div>
+        </div>
+        <div>
+          <form action="">
+            
+            <i id="search" class="fas fa-search"></i>
+            <input class="search2" type="text" placeholder="Search by product, category or collection" />
+            <i class="icon"></i>
+          </form>
+        </div>
+        <div>
+          <span><a><i class="fas fa-grip-lines-vertical"></i></a></span>
+          <div>
+            <a href="#"> <span id="tag"> Login</span> </a>
+          </div>
+
+          <span><a href="#" ><i class="far fa-heart"></i></a></span>
+          <span><a href="#" id="cart"><i class="fas fa-shopping-bag"></i></a></span>
+        </div>
+      </div>
+      <hr style="border: none; width: 100%;">  
     </div>
-    <div>
-        <input type="text" id="search" placeholder="search by category">
+  </header>
+    </div>
+    <div id="searh_card">
+        <input type="text" id="search1" placeholder="search by category">
         <button id="search_btn">Search</button>
 
     </div>
 
     <div id="main">
         <div id="btn">
-        <h1>Filter Your Products</h1>
-        <h4>Filter According to Price</h4>
+        <h4>Filters</h4>
+        <p>Filter According to Price</p>
         <div id="filter">
             <input type="number" id="lower" placeholder="Pirce from"/>
             <input type="number" id="upper" placeholder="price to" />
             <button id="filter-btn">Filter</button>
           </div>
+
+     <div>
+          <select id="sort_rating">
+            <option value="">Sort by rating</option>
+            <option value="4.5">4.5 and above </option>
+            <option value="4">4 and above </option>
+            <option value="3.5">3.5 and above </option>
+            <option value="3">3 and above </option>
+            <option value="2.5">2.5 and above </option>
+            <option value="2">2 and above </option>
+        </select>
+    </div>
+
+    <div>
+        <select id="sort_size">
+            <option value="">sort by size</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+        </select>
+    </div>
+
+
+     
         </div>
+
+   
+
+       
 
         <div id="cont">
        
         </div>
     </div>
+  
    
 </body>
 </html>
@@ -101,7 +334,10 @@ var data = [
         website:"Bewakoof@",
         title:"Men's Purple Justice League Society Graphic Printed Oversized T-shirt",
         price:299,
-        category:"t-shirt"
+        category:"t-shirt",
+        Rating:"4",
+        size:"XL"
+    
       
 
     },
@@ -111,7 +347,20 @@ var data = [
         website:"Bewakoof@",
         title:"Men's Purple Justice League Society Graphic Printed Oversized T-shirt",
         price:349,
-        category:"t-shirt"
+        category:"t-shirt",
+        Rating:"4.5",
+        size:"L"
+
+    },
+
+    {
+        Image:"https://images.bewakoof.com/t640/men-s-white-color-block-casual-shoes-515423-1661834043-1.jpg",
+        website:"Bewakoof@",
+        title:"Men's White Color Black Casual Shoes",
+        price:799,
+        category:"shoes",
+        Rating:"4.5",
+        size:"M"
 
     },
 
@@ -120,7 +369,9 @@ var data = [
         website:"Bewakoof@",
         title:"Men's Purple Justice League Society Graphic Printed Oversized T-shirt",
         price:449,
-        category:"t-shirt"
+        category:"t-shirt",
+        Rating:"4.5",
+        size:"M"
 
     },
 
@@ -129,7 +380,9 @@ var data = [
         website:"Bewakoof@",
         title:"Men's Black Chainsaw Man Graphic Printed Oversized T-shirt",
         price:699,
-        category:"t-shirt"
+        category:"t-shirt",
+        Rating:"4",
+        size:"M"
 
     },
 
@@ -138,7 +391,9 @@ var data = [
         website:"Bewakoof@",
         title:"Men's Blue Justice League Society Graphic Printed Oversized T-shirt",
         price:899,
-        category:"jeans"
+        category:"jeans",
+        Rating:"3",
+        size:"L"
 
     },
 
@@ -147,7 +402,20 @@ var data = [
         website:"Bewakoof@",
         title:"Men's Black Fly Me To The Moon Graphic Printed Oversized T-shirt",
         price:599,
-        category:"jeans"
+        category:"jeans",
+        Rating:"3.5",
+        size:"L"
+
+    },
+
+    {
+        Image:"https://images.bewakoof.com/t640/men-s-orange-and-white-lace-up-casual-shoes-549062-1666004727-1.JPG",
+        website:"Bewakoof@",
+        title:"Men's Orange and white Lace Up Casual Shoes",
+        price:599,
+        category:"shoes",
+        Rating:"3.5",
+        size:"M"
 
     },
 
@@ -156,7 +424,9 @@ var data = [
         website:"Bewakoof@",
         title:"Men's White Karma Circles Typography Oversized T-shirt",
         price:549,
-        category:"jeans"
+        category:"jeans",
+        Rating:"3.5",
+        size:"L"
 
     },
 
@@ -165,7 +435,9 @@ var data = [
         website:"Bewakoof@",
         title:"Men's Blue Oversized Fit T-shirt",
         price:323,
-        category:"jeans"
+        category:"jeans",
+        Rating:"3.5",
+        size:"XL"
 
     },
 
@@ -174,7 +446,9 @@ var data = [
         website:"Bewakoof@",
         title:"Men's Blue Peace Not War Graphic Printed Oversized T-shirt",
         price:569,
-        category:"shoes"
+        category:"t-shirt",
+        Rating:"4.0",
+        size:"XL"
 
     },
 
@@ -183,7 +457,9 @@ var data = [
         website:"Bewakoof@",
         title:"Men's Green AOP Oversized T-shirt",
         price:619,
-        category:"shoes"
+        category:"t-shirt",
+        Rating:"2.5",
+        size:"XL"
 
 
     },
@@ -193,7 +469,9 @@ var data = [
         website:"Bewakoof@",
         title:"Men's Red batman t-shirts",
         price:469,
-        category:"shoes"
+        category:"t-shirt",
+        Rating:"2",
+        size:"L"
 
 
     },
@@ -203,10 +481,57 @@ var data = [
         website:"Bewakoof@",
         title:"Men's Black Customizable T-shit",
         price:499,
-        category:"shoes"
+        category:"t-shirt",
+        Rating:"2",
+        size:"M"
 
 
-    }
+    },
+
+    
+    {
+        Image:"https://images.bewakoof.com/t640/women-black-mickey-the-original-dress-546221-1674217449-1.jpg",
+        website:"Bewakoof@",
+        title:"Men's Purple Justice League Society Graphic Printed Oversized T-shirt",
+        price:349,
+        category:"t-shirt",
+        Rating:"4",
+        size:"L"
+
+    },
+
+    {
+        Image:"https://images.bewakoof.com/t640/men-s-maroon-chainsaw-man-graphic-printed-oversized-t-shirt-581386-1677044901-1.jpg",
+        website:"Bewakoof@",
+        title:"Men's Purple Justice League Society Graphic Printed Oversized T-shirt",
+        price:449,
+        category:"t-shirt",
+        Rating:"4",
+        size:"M"
+
+    },
+
+    {
+        Image:"https://images.bewakoof.com/t640/men-s-black-and-orange-color-block-lace-up-casual-shoes-549057-1666005136-1.JPG",
+        website:"Bewakoof@",
+        title:"Men's Black and Orange Color Clock Lace Up Casual Shoes",
+        price:799,
+        category:"shoes",
+        Rating:"4.5",
+        size:"M"
+
+    },
+
+    {
+        Image:"https://images.bewakoof.com/t640/men-s-white-printed-casual-shoes-541145-1662640715-1.jpg",
+        website:"Bewakoof@",
+        title:"Men's Black and Orange Color Clock Lace Up Casual Shoes",
+        price:799,
+        category:"shoes",
+        Rating:"4.5",
+        size:"M"
+
+    },
 
 ]
 
@@ -236,9 +561,10 @@ var upper = document.getElementById("upper")
 
 var search_btn = document.getElementById("search_btn")
 search_btn.addEventListener("click",()=>{
-   var search= document.getElementById("search")
+    console.log("Yes")
+   var search= document.getElementById("search1")
    var cat_filter= data.filter((ele)=>{
-    if(ele.category===search.value){
+    if(ele.category===search1.value){
         return true
     }else{
         return false
@@ -247,9 +573,46 @@ search_btn.addEventListener("click",()=>{
   display(cat_filter)
 })
 
+var sort = document.getElementById("sort_rating")
+sort.addEventListener("change",()=>{
+   
+    var sort_filter= data.filter((ele)=>{
+        // console.log(ele.Rating==="4")
+
+      if(ele.Rating===sort.value){
+       return true
+      }else{
+        return false
+      }
+    })
+
+    display(sort_filter)
+})
 
 
-// function display(obj)
+var size = document.getElementById("sort_size")
+size.addEventListener("change",()=>{
+    var sort_size=data.filter((ele)=>{
+        if(ele.size===size.value){
+         return true
+        }else{
+            return false
+        }
+       
+    })
+    display(sort_size)
+})
+
+
+
+var cart = document.getElementById("cart");
+cart.addEventListener("click",()=>{
+ window.location.href="./cart.html"
+console.log("Yes")
+})
+
+
+
 function display(allData){
  cont.innerHTML=""
 allData.forEach(ele=>{
@@ -258,6 +621,12 @@ allData.forEach(ele=>{
     div.setAttribute("class","card")
    var image = document.createElement("img");
    image.setAttribute("src",ele.Image)
+
+   var Rating= document.createElement("p");
+   Rating.innerText=`Rating:-${ele.Rating}`
+
+   var size= document.createElement("p");
+   size.innerText=`Size:-${ele.size}`
 
    var shoes= document.createElement("p");
    shoes.innerText=`category:-${ele.category}`
@@ -269,7 +638,7 @@ allData.forEach(ele=>{
    p.innerText=ele.title
 
    var price = document.createElement("h2");
-   price.innerText=ele.price
+   price.innerText=`$${ele.price}`
 
    var cart_btn = document.createElement("button");
    cart_btn.setAttribute("class","cart")
@@ -280,7 +649,7 @@ allData.forEach(ele=>{
     alert("Product added to Your cart")
    })
 
-   div.append(image,h4,p,shoes,price,cart_btn)
+   div.append(image,h4,p,shoes,Rating,size,price,cart_btn)
    cont.append(div)
 })
 }
