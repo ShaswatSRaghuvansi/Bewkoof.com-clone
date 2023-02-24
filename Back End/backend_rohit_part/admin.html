@@ -39,7 +39,7 @@ height: 50px;
 
 }
 .navmenu{
-width: 200px;
+width: 400px;
 margin: none;
 display: flex;
 justify-content: space-around;
@@ -57,7 +57,9 @@ a{
 
 }
 .datatable{
-
+display: flex;
+flex-direction: column;
+justify-content: space-around;
     width: 95%;
 border: 3px solid white;
 border-radius: 7px;
@@ -73,6 +75,54 @@ th{
    
     padding: 10px 0px 10px ;
 }
+.card{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+height: 50px;
+border: 1px solid white;
+}
+
+.th{
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+}
+
+
+.card>button{
+    width: 100px;
+    height: 30px;
+    font-size: 12px;
+}
+.card>img{
+    height: 100%;
+}
+
+button{
+color: rgb(52, 52, 52);
+border: 1px solid rgb(255, 255, 255) ;
+   border-radius: 8px
+}
+
+#delete{
+ color: white;
+    background-color: rgb(255, 38, 81);
+}
+#edit{
+    background-color: rgb(0, 162, 0);
+    color: white;
+}
+#edit:hover{
+    color: rgb(0, 162, 0);
+    background-color: white;
+    border:1px solid rgb(0, 162, 0);
+}
+#delete:hover{
+    color: rgb(255, 38, 81);;
+    background-color: white;
+    border:1px solid rgb(255, 38, 81);
+}
     </style>
         
 
@@ -81,27 +131,39 @@ th{
 <div class="Navbar">
 <div class="logo"><img src="demoimg.jpg" alt=""></div>
 <div class="navmenu">
-    <a href="">Products</a>
-    <a href="">Account</a>
+    <a href="#">Products</a>
+    <a href="#">Orders</a>
+    <a href="#">Delivered</a>
+    <a href="#">Account</a>
 </div>
     
 </div>
 
 <div class="table">
 
-    <table class="datatable" id="products">
-        <thead>
-            <th>Product</th>
+    <div class="datatable" id="products">
+
+            <!-- <th>Product</th>
             <th>ID</th>
           
             <th>Desc</th>
             <th>Price</th>
             <th>Sale</th>
             <th>Edit</th>
-            <th>Delete</th>
+            <th>Delete</th> -->
+            <div class="th">
+                <h3>Product</h3>
+                <h3>ID</h3>
+                <h3>Name</h3>
+               
+                <h3>Price</h3>
+                <h3>Sale</h3>
+              
+                <h3>Edit Prodct</h3>
+                <h3>Delete Product</h3>
+            </div>
     
-        </thead>
-        <tbody>
+        <div>
     
     
         </tbody>
@@ -113,6 +175,67 @@ th{
 
 
     </body>
+    <script>
+// const url=`server/db.json`
+const url="https://v1.nocodeapi.com/dev_rohit1438/google_sheets/nBSXayJbTkuKqgDf?tabId=Sheet1"
+let datatable=document.getElementById("products")
+
+let dataarr=[]
+async function fetchData(url){
+try{
+
+    let data=await fetch(url)
+data=await data.json()
+await dataarr.push(data.data)
+// let productdata=localStorage.setItem("productdata",JSON.stringify(data))
+await displayProduct(dataarr)
+
+console.log(dataarr)
+
+}catch(err){
+    console.log(err)
+}
+
+}
+fetchData(url)
+
+function displayProduct(data){
+
+    data.forEach((product) => {
+        let card=document.createElement("div")
+card.setAttribute("class","card")
+//         let image=document.createElement("img")  
+//         let id=document.createElement("h3") 
+//         let name=document.createElement("h3")   
+//         let desc=document.createElement("p") 
+//         let price=document.createElement("h3") 
+//         let sale=document.createElement("h3") 
+//         let edit=document.createElement("button") 
+//         edit.setAttribute("id","edit")
+//         let del=document.createElement("button") 
+//     del.setAttribute("id","delete")
+    
+//   image.src=product.image
+
+//     id.innerText=product.id
+//     name.innerText=product.name
+//     price.innerText=product.price
+//     sale.innerText=product.sale
+//     edit.innerText="Edit"
+//     del.innerText="Delete"
+//    card.append(image,id,
+// name,price,sale,edit,del)
+//     datatable.append(card)
+console.log(product.row_id)
+    });
+
+
+
+
+
+
+
+}
+
+    </script>
     </html>
-</body>
-</html>
