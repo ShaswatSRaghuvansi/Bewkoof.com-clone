@@ -148,15 +148,31 @@ swiper-slide img {
     grid-template-rows: auto;
     grid-gap: 10px;
     justify-content: space-around;
-    height: 150px;
+    height: 170px;
     width: 95%;
     margin: auto;
   }
   .line2 img {
+    
     width: 100%;
     margin-top: 30px;
     border-radius: 10px;
   }
+  .zoom1 {
+    padding: 0px;
+    
+    transition: transform .2s; /* Animation */
+    width: 100%;
+    height: 100px;
+    margin: 0 auto;
+  }
+  
+  .zoom1:hover {
+    -ms-transform: scale(1.2); /* IE 9 */
+    -webkit-transform: scale(1.2); /* Safari 3-8 */
+    transform: scale(1.2); 
+  }
+  
   .line3 h3 {
     text-align: center;
     font-family: "Montserrat", sans-serif;
@@ -208,20 +224,33 @@ swiper-slide img {
   .line6 {
     display: grid;
     width: 100%;
-    height: 550px;
+    height: 590px;
     /* border: 2px solid red; */
     grid-template-columns: 15% 15% 15% 15% 15% 15%;
-
+    
     grid-template-rows: auto auto auto;
-    grid-gap: 1%;
+    grid-gap: 200px 20px;
     justify-content: center;
   }
 
   .line6 img {
     max-width: 80%;
-
     border-radius: 5px;
-    margin-top: 10px;
+    
+  }
+  
+  .zoom2 {
+    padding: 0px;
+    transition: transform .2s; /* Animation */
+    width: 100%;
+    height: 100px;
+    margin: 0 auto;
+  }
+  
+  .zoom2:hover {
+    -ms-transform: scale(1.2); /* IE 9 */
+    -webkit-transform: scale(1.2); /* Safari 3-8 */
+    transform: scale(1.1);  /* This overlaps with the Nav Bar */
   }
   
   .line7 {
