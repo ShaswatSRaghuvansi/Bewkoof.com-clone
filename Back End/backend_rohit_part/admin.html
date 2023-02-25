@@ -63,7 +63,7 @@ justify-content: space-around;
     width: 95%;
 border: 3px solid white;
 border-radius: 7px;
-height: 700px;
+
 margin: auto;
 }
 thead{
@@ -123,7 +123,41 @@ border: 1px solid rgb(255, 255, 255) ;
     background-color: white;
     border:1px solid rgb(255, 38, 81);
 }
-    </style>
+ 
+ #add_products{
+    width:150px;
+    height: 60px;
+    
+    padding: 10px 25px 10px;
+
+ }
+ #add_products:hover{
+    background-color: black;
+    color: white;
+ }
+ .addform{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+ }
+ .addform>input{
+    width: 350px;
+    margin: 3px;
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+ }
+
+ .add{
+    border: 1px solid rgb(255, 255, 255);
+    padding: 5px 5px 5px;
+
+    display: flex;
+    align-items: center;
+   margin: auto;
+ }
+ </style>
         
 
 
@@ -162,6 +196,18 @@ border: 1px solid rgb(255, 255, 255) ;
                 <h3>Edit Prodct</h3>
                 <h3>Delete Product</h3>
             </div>
+            <div class="add">
+                <div class="addform">
+                    <input type="text" id="addid" placeholder="Product id">
+                <input type="text" id="addtitle" placeholder="Title">
+                <input type="text" id="addimage" placeholder="Image URL">
+                <input type="text" id="addprice" placeholder="Price">
+                <input type="text" id="addsale" placeholder="Sale Price">
+
+                </div>
+                <button type="submit" id="add_products">Add Products</button>
+
+            </div>
     
         <div>
     
@@ -176,17 +222,20 @@ border: 1px solid rgb(255, 255, 255) ;
 
     </body>
     <script>
-// const url=`server/db.json`
-const url="https://v1.nocodeapi.com/dev_rohit1438/google_sheets/nBSXayJbTkuKqgDf?tabId=Sheet1"
+const url=`http://localhost:8000/product`
+//const url="https://v1.nocodeapi.com/dev_rohit1438/google_sheets/nBSXayJbTkuKqgDf?tabId=Sheet1"
+//https://fakestoreapi.com/products/
+//const url="https://fakestoreapi.com/products/"
 let datatable=document.getElementById("products")
 
-let dataarr=[]
+let dataarr;
 async function fetchData(url){
 try{
 
     let data=await fetch(url)
 data=await data.json()
-await dataarr.push(data.data)
+// await dataarr.push(data.data)
+ dataarr=await data
 // let productdata=localStorage.setItem("productdata",JSON.stringify(data))
 await displayProduct(dataarr)
 
@@ -204,29 +253,33 @@ function displayProduct(data){
     data.forEach((product) => {
         let card=document.createElement("div")
 card.setAttribute("class","card")
-//         let image=document.createElement("img")  
-//         let id=document.createElement("h3") 
-//         let name=document.createElement("h3")   
-//         let desc=document.createElement("p") 
-//         let price=document.createElement("h3") 
-//         let sale=document.createElement("h3") 
-//         let edit=document.createElement("button") 
-//         edit.setAttribute("id","edit")
-//         let del=document.createElement("button") 
-//     del.setAttribute("id","delete")
-    
-//   image.src=product.image
 
-//     id.innerText=product.id
-//     name.innerText=product.name
-//     price.innerText=product.price
-//     sale.innerText=product.sale
-//     edit.innerText="Edit"
-//     del.innerText="Delete"
-//    card.append(image,id,
-// name,price,sale,edit,del)
-//     datatable.append(card)
-console.log(product.row_id)
+
+        let image=document.createElement("img")  
+        let id=document.createElement("h3") 
+        let name=document.createElement("h3")   
+        let desc=document.createElement("p") 
+        let price=document.createElement("h3") 
+        let sale=document.createElement("h3") 
+        let edit=document.createElement("button") 
+        edit.setAttribute("id","edit")
+        let del=document.createElement("button") 
+    del.setAttribute("id","delete")
+    
+  image.src=product.image
+
+    id.innerText=product.id
+    name.innerText=product.offer
+    price.innerText=product.price
+    sale.innerText=product.discount
+    edit.innerText="Edit"
+    del.innerText="Delete"
+   card.append(image,id,
+name,price,sale,edit,del)
+
+// card.append(del,edit)
+    datatable.append(card)
+// console.log(product.row_id)
     });
 
 
