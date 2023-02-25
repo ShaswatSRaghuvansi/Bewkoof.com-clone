@@ -103,7 +103,7 @@ swiper-container {
       
   width: 100%;
   height: 490px;
-  z-index: -1;
+  z-index: -1;  /*nav bar overlap fix : 2 */
 }
 
 swiper-slide {
@@ -111,7 +111,7 @@ swiper-slide {
   margin-top: 61px;
   text-align: center;
   font-size: 18px;
-  background: #a5a5a5;
+  background: #ce1919;
   display: flex;
   justify-content: center;
   align-items: center;
