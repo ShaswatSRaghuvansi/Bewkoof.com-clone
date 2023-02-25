@@ -5,8 +5,6 @@ https://github.com/ShaswatSRaghuvansi/squalid-direction-3013
 
 ### Bewakoof_Clone
 
-Bewakoof.com is an E-Commerce website, where we could buy a varities of clothes of different category. This is the Clone of Bewakoof.com which was given by Masai school during the unit-3 curriculm. We are 5 members in the project team Kalyani, Magendram, Mohit, Saurav, Ankit, and Ashish. We hae taken the challenge to complete the project in 4days and successfully completed in in a deadline time..
-
 ## Powered By
 <ul>
 <li>HTML</li>
@@ -58,6 +56,8 @@ Bewakoof.com is an E-Commerce website, where we could buy a varities of clothes 
 https://github.com/ShaswatSRaghuvansi/squalid-direction-3013.git
 
 ![beUnique_FrontPage](https://user-images.githubusercontent.com/115460278/221366235-e6262d38-9941-4984-a00d-b90b52d33c04.jpg)
+
+
 
 
 Here you can see the project: 
