@@ -55,6 +55,7 @@ https://github.com/ShaswatSRaghuvansi/squalid-direction-3013.git
 
 ![beUnique_FrontPage](https://user-images.githubusercontent.com/115460278/221366235-e6262d38-9941-4984-a00d-b90b52d33c04.jpg)
 
+![beUnique_Payment_Gateway](https://file%2B.vscode-resource.vscode-cdn.net/c%3A/Users/acer/Desktop/Git%20World/squalid-direction-3013/Front%20End/pictures/beUnique_Payment_Gateway.png?version%3D1677409553501)
 
 
 
