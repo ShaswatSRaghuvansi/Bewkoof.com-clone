@@ -29,8 +29,6 @@ https://github.com/ShaswatSRaghuvansi/squalid-direction-3013
 <li>Functionality to add a product to wishlist and cart</li>
 <li>Functionality to make a payments</li>
 <li>Added booking success display functionality</li>
-<li></li>
-<li></li>
 </ul>
 
 ## Tech-Stack
