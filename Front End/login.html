@@ -98,7 +98,7 @@
   <script>
 function generateOTP() {
  
-  const otp = Math.floor(100000 + Math.random() * 900000);
+  let otp = Math.floor(100000 + Math.random() * 900000);
 
   sessionStorage.setItem("otp", otp);
 
@@ -108,7 +108,7 @@ function generateOTP() {
 }
 
 
-const continueBtn = document.getElementById("continue");
+let continueBtn = document.getElementById("continue");
 
 continueBtn.addEventListener("click", generateOTP);
 

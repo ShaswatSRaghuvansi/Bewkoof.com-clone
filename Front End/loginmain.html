@@ -73,25 +73,25 @@
 </body>
 
 <script>
-const loginForm = document.getElementById('login-form');
+let loginForm = document.getElementById('login-form');
 
 loginForm.addEventListener('submit', function (event) {
   event.preventDefault();
 
-  const emailInput = document.getElementById('email');
-  const passwordInput = document.getElementById('password');
+  let emailInput = document.getElementById('email');
+  let passwordInput = document.getElementById('password');
 
-  const email = emailInput.value.trim();
-  const password = passwordInput.value;
+  let email = emailInput.value.trim();
+  let password = passwordInput.value;
 
   if (!email || !password) {
     alert('Please fill in all required fields');
     return;
   }
 
-  const userData = JSON.parse(localStorage.getItem('userData')) || {};
+  let userData = JSON.parse(localStorage.getItem('userData')) || {};
  
-  const user = Object.values(userData).find(u => u.email === email);
+  let user = Object.values(userData).find(u => u.email === email);
 
   if (!user) {
     alert('User not found. Please register first.');
