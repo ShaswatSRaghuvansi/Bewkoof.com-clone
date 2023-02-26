@@ -1,0 +1,499 @@
+
+
+
+
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,500;1,200;1,400;1,500&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/f1eae3bf56.js" crossorigin="anonymous"></script>
+    <style>
+
+    ::-webkit-scrollbar {
+              width: 8px;
+              background-color: #66FF00;
+          }
+    ::-webkit-scrollbar-thumb {
+              background: linear-gradient(#ff0040, #0011ff);
+              border-radius: 8px;
+          }
+          
+    ::-webkit-scrollbar-thumb:hover {
+              background: linear-gradient(#0011ff , #ff0040);
+          }
+
+
+body{
+  margin: 0px;
+  padding: 0px;
+}
+.mainhead {
+    width: 100%;
+    background: #ffffff;
+    height: 60px;
+    line-height: 52px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    position:fixed ;
+    
+
+  }
+  /* .small-mainheadrow{
+    background-color: aqua;
+  } */
+  .mainheadrow {
+    max-width: 1170px;
+    margin: 0 auto;
+    margin-top: 7px;
+    /* border: 1px solid red; */
+    display: flex;
+  }
+  .mainheadrow > div:nth-child(1) {
+    /* border: 1px solid red; */
+    width: 16%;
+  }
+  .mainheadrow > div:nth-child(1) img {
+    /* logo css */
+    height: 20px;
+    vertical-align: middle;
+    margin-bottom: 5px;
+  }
+
+  .mainheadrow > div:nth-child(2) {
+    /* border: 1px solid red; */
+    width: 30%;
+    margin-left: 100px;
+  }
+  .mainheadrow > div:nth-child(3) {
+    /* border: 1px solid red; */
+    width: 25%;
+    display: flex;
+  }
+  .mainheadrow > div:nth-child(4) {
+    /* border: 1px solid red; */
+    width: 20%;
+    display: flex;
+  }
+  .mainheadrow > div:nth-child(3) > form {
+    width: 100%;
+    height: 50px;
+    text-align: left;
+    display: flex;
+  }
+  .mainheadrow > div:nth-child(3) input {
+    height: 80%;
+    width: 100%;
+    background: #eaeaea;
+    border: none;
+    border-radius: 7px;
+    margin-top: 2px;
+  }
+  .icon {
+    content: "\E90E";
+  }
+  a > i {
+    font-size: 22px;
+    margin-left: 20px;
+    color: rgb(43, 42, 42);
+  }
+  a {
+    font-size: 15px;
+    margin-left: 5px;
+    color: rgb(58, 55, 55);
+    text-decoration: none;
+  }
+  .fa,
+  .fas {
+    margin-top: 15px;
+    margin-right: 10px;
+  }
+  span {
+    font-size: 15px;
+    margin-right: 20px;
+    margin-top: 3px;
+    font-family: montserrat, sans-serif;
+    color: black;
+  }
+
+  .fas,
+  .fa-grip-lines-vertical {
+    margin-top: 10px;
+  }
+  .fa-search {
+    margin-top: 15px;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+        #navbar{
+            height: 100px;
+            /* border: 1px solid red; */
+            margin-bottom: 30px;
+        }
+
+       #main{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            margin-left: 0px;
+        
+        }
+        #btn{
+            width: 300px;
+            margin-right: 50px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius: 10px;
+            text-align: center;
+            height: 400px;
+            background-color: #fdd835;
+            margin-left: 20px;
+          
+            /* background-color: rgb(211, 211, 20); */
+        }
+        #cont{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 35px;
+            text-align: center;
+            margin-right: 150px;
+        }
+        .card{
+           
+        
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            
+        }
+
+        .card>img{
+            height: 250px;
+            width:250px;
+            
+        }
+
+        .cart{
+            background-color:#ff0081;
+            color: #fff;
+            height: 35px;
+            border: 0px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        
+        }
+        .cart:hover{
+            background-color:#ff0081;
+            color: #fff;
+            font-size: medium;
+        font-weight: bolder;
+        width: 100px;
+        }
+
+        #searh_card{
+            /* width: 400px; */
+            height: 100px;
+            
+            margin-left: 40%;
+        }
+        #search1{
+            height: 40px;
+            width: 250px;
+            text-align: center;
+        }
+
+        #search_btn{
+            height: 45px;
+            width: 81px;
+            text-align: center;
+        }
+
+        #search_btn:hover{
+            background-color:yellow;
+           color: red;
+        
+        }
+
+        #btn>h4{
+            color: grey;
+        }
+        #filter-btn{
+            width: 170px;
+            margin-bottom: 30px;
+        
+        }
+
+        #filter-btn:hover{
+            background-color:yellow;
+           color: red;
+        
+        }
+
+        #sort_rating{
+            width: 175px;
+            height: 30px;
+            margin-bottom: 20px;
+          
+        }
+
+        #sort_discount{
+            width: 175px;
+            height: 30px;
+        }
+        #sort_size{
+            width: 175px;
+            height: 40px;
+            margin-bottom: 20px;
+        }
+
+        #img-filter{
+            margin-top: 40px;
+            width: 200px;
+        }
+
+
+    
+
+    </style>
+
+
+
+</head>
+<body>
+    <!-- <button id="cart_btn">Cart</button> -->
+    <div id="navbar">
+
+        <header>
+            <div class="mainhead">
+              <!-- <div class="small-mainheadrow">
+              </div> -->
+              <div class="mainheadrow">
+                <div>
+                  <a href="index.html"><img src="./picture/logo.jpg" alt="beUnikue.com logo" style="height: 35px;"/></a>
+                </div>
+                
+      
+                <div>
+                  <div style="display: inline-block">
+                    <a href="./filter.html"><span>MEN</span></a>
+                    <a href="./filter.html"><span>WOMEN</span></a>
+                    <a href="./filter.html"><span>ACCESSORIES</span></a>
+                  </div>
+                </div>
+                <div>
+                  <form action="">
+                    
+                    <i id="search" class="fas fa-search"></i>
+                    <input class="search2" type="text" placeholder="Search by product, category or collection" />
+                    <i class="icon"></i>
+                  </form>
+                </div>
+                <div>
+                  <span><a><i class="fas fa-grip-lines-vertical"></i></a></span>
+                  <div>
+                    <a href="#"> <span id="tag"> Login</span> </a>
+                  </div>
+      
+                  <span><a href="#" ><i class="far fa-heart"></i></a></span>
+                  <span><a id="cart_btn" href="#"><i class="fas fa-shopping-bag"></i></a></span>
+                </div>
+              </div>
+              <hr style="border: none; width: 100%;">  
+            </div>
+          </header>
+       
+     
+       
+         </div>
+         <!-- <div id="searh_card">
+             <input type="text" id="search1" placeholder="search by category">
+             <button id="search_btn">Search</button>
+     
+         </div> -->
+     
+         <div id="main">
+             <div id="btn">
+                <img id="img-filter" src="./picture/logo.png.png" alt="">
+             <h4>Filters</h4>
+             <p>Filter According to Price</p>
+             <div id="filter">
+                 <input type="number" id="lower" placeholder="Pirce from"/>
+                 <input type="number" id="upper" placeholder="price to" />
+                 <button id="filter-btn">Filter</button>
+               </div>
+     
+          <div>
+               <select id="sort_rating">
+                 <option value="">Sort by rating</option>
+                 <option value="4.5">4.5 and above </option>
+                 <option value="4">4 and above </option>
+                 <option value="3.5">3.5 and above </option>
+                 <option value="3">3 and above </option>
+                 <option value="2.5">2.5 and above </option>
+                 <option value="2">2 and above </option>
+             </select>
+         </div>
+     
+         <div>
+             <select id="sort_discount">
+                 <option value="">Get Discount</option>
+                 <option value="399">Discount-399</option>
+                 <option value="499">Discount-499</option>
+                 <option value="699">Discount-699</option>
+                 
+             </select>
+         </div>
+     
+     
+          
+             </div>
+     
+        
+     
+            
+     
+             <div id="cont">
+            
+             </div>
+         </div>
+       
+    
+</body>
+
+</html>
+<script>
+
+var cont = document.getElementById("cont")
+
+var cart1 = document.getElementById("cart_btn");
+cart1.addEventListener("click",()=>{
+ window.location.href="./cart.html"
+console.log("Yes")
+})
+
+var array =JSON.parse(localStorage.getItem("cart"));
+    if(array===null){
+      array=[]
+    }
+    
+        var api=`http://localhost:8000/product`
+        fetch(api).then((res)=>{
+            return res.json()
+        })
+        .then((data)=>{
+            display(data)
+            arr1= data
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+    
+
+        var sort_rating= document.getElementById("sort_rating");
+sort_rating.addEventListener("change",()=>{
+
+// console.log(filter.value)
+    let filtered_rating= arr1.filter((ele)=>{
+        // console.log(typeof (+filter.value),typeof ele.rating)
+    if(ele.rating>(+sort_rating.value)){
+        return true
+    }else{
+        return false
+    }
+    })
+    display(filtered_rating)
+   })
+
+
+var filter_btn= document.getElementById("filter-btn");
+filter_btn.addEventListener("click",()=>{
+var lower = document.getElementById("lower");
+var upper = document.getElementById("upper")
+
+    let price_f = arr1.filter((ele)=>{
+     if((ele.price>=`₹${lower.value}`)&&(ele.price<=`₹${upper.value}`)){
+        return true
+     }else{
+        return false
+     }
+//  console.log(ele.price)
+//  console.log(`₹${lower.value}`)
+// console.log(`₹${upper.value}`)
+    })
+    //  display(price_f)
+ display(price_f)
+
+})
+
+
+var sort_discount= document.getElementById("sort_discount")
+
+sort_discount.addEventListener("change",()=>{
+   var discount_f= arr1.filter((ele)=>{
+    if(ele.discount===(+sort_discount.value)){
+        return true
+    }else{
+        return false
+    }
+   })
+ display(discount_f)
+})
+   
+
+
+    function display(allData){
+        cont.innerHTML=""
+    //   console.log(allData)
+        allData.forEach(ele => {
+        
+            var div = document.createElement("div")
+            div.setAttribute("class","card") 
+
+            var id=document.createElement("h4");
+            id.innerText=ele.id
+
+               var image = document.createElement("img");
+               image.setAttribute("src",ele.image)
+
+                var Rating= document.createElement("p");
+                Rating.innerText=`Rating:-${ele.rating}`
+
+                var discount= document.createElement("p");
+                discount.innerText=`Discount:-${ele.discount}`
+
+                var price= document.createElement("p");
+                price.innerText=`Price:-${ele.price}`
+
+                   var title= document.createElement("p");
+                   title.innerText=ele.title;
+
+                   var offer= document.createElement("p");
+                   offer.innerText=`Offer:-${ele.offer}`
+
+                   var cart_btn = document.createElement("button");
+                   cart_btn.setAttribute("class","cart")
+                   cart_btn.innerText="ADD TO CART"
+                   cart_btn.addEventListener("click",()=>{
+                    array.push(ele)
+                    localStorage.setItem("cart",JSON.stringify(array))
+                     alert("Product added to Your cart")   
+                })
+
+        div.append(image,id,title,offer,discount,price,Rating,cart_btn)
+        cont.append(div)
+
+        });
+
+}
+
+</script>

@@ -2,8 +2,12 @@
     color: black;
     font-family: montserrat, sans-serif;
 }
+body{
+    background: rgb(253,29,29);
+background: linear-gradient(90deg, rgba(253,29,29,0.5803571428571428) 24%, rgba(252,176,69,0.5551470588235294) 74%);
+}
 .payment-box{
-    margin-top: 130px;
+    margin-top: 80px;
     margin-left: 200px;
     width: 1000px;
     
@@ -17,9 +21,10 @@
     margin-left: 12%;
     padding-right: 20px;
     display: flex;
-    border: 1px solid rgb(161, 157, 157);
+    border: 2px solid rgb(0, 0, 0);
     width: 87%;
     min-height: 520px;
+   
 }
 
 #lower_box>div:nth-child(1) {
@@ -64,16 +69,19 @@ p {
 #lower_right_box {
     width: 78%;
     margin-left: 30px;
-    border: 1px solid #42a2a2;
+    border: 1px solid #000000;
     padding: 20px;
     padding-right: 20px;
     margin-top: 12%;
     border-radius: 5px;
 
+    background-color: #f3f3f3;
+
 }
 
 #lower_right_box>div:nth-child(1) {
     margin-left: 10px;
+    
 }
 
 #card_num {
@@ -118,7 +126,7 @@ p {
 }
 
 #card_check_box>label {
-    font-size: 10px;
+    font-size: 12px;
     text-align: top;
 
 }
@@ -137,7 +145,7 @@ p {
 
 #new_card {
     margin-left: 13px;
-    font-size: 12px;
+    font-size: 17px;
     text-align: center;
     position: relative;
 }
