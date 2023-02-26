@@ -37,7 +37,7 @@
             <form action="">
               
               <i id="search" class="fas fa-search"></i>
-              <input class="search2" type="text" placeholder="  Search by product, category or collection" />
+              <input class="search2" type="text" placeholder="  Search by product or category" />
               <i class="icon"></i>
             </form>
           </div>
