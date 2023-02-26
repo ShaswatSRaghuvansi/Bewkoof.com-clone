@@ -191,6 +191,21 @@
           margin-left: 60px;
           margin-bottom: 40px;
         }
+        .remove{
+          background: rgb(253,29,29);
+background: linear-gradient(90deg, rgba(253,29,29,0.9220938375350141) 32%, rgba(252,69,137,0.9697128851540616) 67%);
+   margin-bottom: 20px;
+   border: 0px;
+   height: 35px;
+   width: 120px;
+   border-radius: 15px;
+   color: #eaeaea;
+        }
+        .remove:hover{
+          width: 150px;
+          height: 40px;
+          /* font-weight: bolder; */
+        }
 </style>
 <body>
     <div id="navbar">
@@ -348,12 +363,19 @@ console.log(typeof (+ele.price.replace('₹','')))
     // console.log(count)
 
   var remove = document.createElement("button")
+  remove.setAttribute("class","remove")
   remove.innerText="Remove"
 
   remove.addEventListener("click",()=>{
-   
-  })
-
+    var index = ls_data.findIndex(item => item.title === ele.title);
+    if (index !== -1) {
+        ls_data.splice(index, 1);
+        localStorage.setItem("cart", JSON.stringify(ls_data)); 
+        total_price -= +ele.price.replace('₹',''); 
+        display(ls_data); 
+        sum.innerText = total_price; 
+    }
+});
   
   
    
