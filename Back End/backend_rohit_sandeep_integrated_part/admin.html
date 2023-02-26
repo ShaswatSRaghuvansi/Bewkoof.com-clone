@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+<body>
+
+    <!-- stylesheet  -->
+    <style>
+
+*{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(85, 85, 85);
+text-align: center;
+font-size:17px ;
+
+}
+body{
+    background-color:#EDF1D6 ;
+   
+}
+.Navbar{
+    background-color: white;
+    width: 100%;
+    display: flex;
+align-items: center;
+justify-content: space-between;
+height: 50px;
+
+}
+.navmenu{
+width: 400px;
+margin: none;
+display: flex;
+justify-content: space-around;
+}
+.logo>img{
+ 
+    width: 120px;
+}
+a{
+    text-decoration: none;
+}
+.table{
+
+    margin-top:40px;
+
+}
+.datatable{
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+    width: 95%;
+/* border: 3px solid white; */
+border-radius: 7px;
+
+margin: auto;
+}
+thead{
+    border-radius: 5px;
+    /* background-color:white; */
+    border: none;
+}
+th{
+   
+    padding: 10px 0px 10px ;
+}
+.card{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+height: 100px;
+/* border: 1px solid white; */
+margin: 5px;
+box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+
+.th{
+    width: 100%;
+    border: 5px solid rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+}
+
+
+.card>button{
+    width: 100px;
+    height: 30px;
+    font-size: 12px;
+}
+.card>img{
+    height: 100%;
+}
+
+button{
+color: rgb(52, 52, 52);
+border: 1px solid rgb(255, 255, 255) ;
+   border-radius: 8px
+}
+
+#delete{
+ color: white;
+    background-color: rgb(255, 38, 81);
+}
+#edit{
+    background-color: rgb(0, 162, 0);
+    color: white;
+}
+#edit:hover{
+    color: rgb(0, 162, 0);
+    background-color: white;
+    border:1px solid rgb(0, 162, 0);
+}
+#delete:hover{
+    color: rgb(255, 38, 81);;
+    background-color: white;
+    border:1px solid rgb(255, 38, 81);
+}
+ 
+ #update,#add_products{
+    width:150px;
+    height: 60px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 10px 25px 10px;
+
+ }
+ #update:hover,#add_products:hover{
+    background-color: black;
+    color: white;
+ }
+ .addform{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    margin-right: 10px;
+   align-items:center;
+   background-color: white;
+   padding-bottom: 10px;
+ 
+ }
+ .addform>input{
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+    width: 350px;
+    margin: 3px;
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+ }
+
+ .add{
+    padding: 5px 5px 5px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+justify-content: center;
+ }
+    </style>
+        
+
+   <!-- navbar-section       -->
+   <div class="Navbar">
+   <div class="logo"><img src="demoimg.jpg" alt=""></div>
+    <div class="navmenu">
+    <a href="#">Products</a>
+    <a href="#">Orders</a>
+    <a href="#">Delivered</a>
+    <a href="index.html">Account</a>
+    </div>
+    
+   </div>
+   <!-- nav ended  -->
+ 
+   <!-- content table  -->
+  <div class="table">
+
+       <!--starts form section for data to be populated  -->
+       <div class="add">
+        <div class="addform">
+            <h1 style="font-size: 20px;">Add details for new product⬇️</h1>
+            <input type="text" id="addid" placeholder="Product id">
+            <input type="text" id="addtitle" placeholder="Title">
+            <input type="text" id="addimage" placeholder="Image URL">
+            <input type="text" id="addprice" placeholder="Price">
+            <input type="text" id="addsale" placeholder="Sale Price">
+        </div>
+        <button type="submit" id="add_products">Add Products</button>
+        <button id="update">Update</button>
+       </div>
+       <!--ends  form section for data to be populated -->
+
+
+       <!-- starts thead part for admit data to be populated  -->
+       <div class="th">
+        <h3>Product</h3>
+        <h3>ID</h3>
+        <h3>Name</h3>
+        <h3>Price</h3>
+        <h3>Sale</h3>
+        <h3>Edit Prodct</h3>
+        <h3>Delete Product</h3>
+          </div>
+       <!-- starts thead part for admit data to be populated  -->
+
+ 
+       <!-- starts data append table  -->
+       <div class="datatable" id="products">
+       </div>
+      <!-- ends data append table  -->
+    
+
+
+  </div>
+</body>
+
+
+ <!-- script tag starts  -->
+<script>
+const url=`http://localhost:8000/product`
+
+// form submint button
+let addbtn=document.getElementById("add_products")
+
+// all form section tags being catch here 
+let addid=document.getElementById("addid");
+let addtitle=document.getElementById("addtitle");
+let addimage=document.getElementById("addimage");
+let addprice=document.getElementById("addprice");
+let addsale=document.getElementById("addsale");
+
+
+// final backend data to be populated here 
+let datatable=document.getElementById("products")
+
+let dataarr;
+
+// fetch function responsible for all displaying data
+async function fetchData(url){
+ try{
+    let data=await fetch(url)
+    data=await data.json()
+    dataarr=await data
+    await displayProduct(dataarr)
+    console.log(dataarr)
+
+ }catch(err){
+    console.log(err)
+ }
+}
+
+// fetch function calling 
+fetchData(url)
+
+// on submit form event-listener 
+addbtn.addEventListener("click",addproduct);
+
+// add product-Post request function 
+async function addproduct(){
+ try{
+  let addobj={
+    id:addid.value,
+    offer:addtitle.value,
+    image:addimage.value,
+    price:addprice.value,
+    discount:addsale.value
+   }
+  let add_req=await fetch(url,{
+  method:"POST",
+  headers:{
+    "Content-Type" : 'application/json'
+  },
+  body:JSON.stringify(addobj)
+  })
+ }catch(err){
+         console.log(err)
+    }
+    fetchData(url)
+}
+
+// admin side all products population function 
+function displayProduct(data){
+    datatable.textContent=""
+    data.forEach((product) => {
+
+     //  creating all required tags    
+        let card=document.createElement("div")
+        card.setAttribute("class","card")
+        let image=document.createElement("img")  
+        let id=document.createElement("h3") 
+        let name=document.createElement("h3")   
+        let desc=document.createElement("p") 
+        let price=document.createElement("h3") 
+        let sale=document.createElement("h3") 
+        let edit=document.createElement("button") 
+        edit.setAttribute("id","edit")
+        let del=document.createElement("button") 
+        del.setAttribute("id","delete")
+
+
+    
+        //assigning data to every tag from server
+        image.src=product.image
+        id.innerText=product.id
+        name.innerText=product.offer
+        price.innerText=product.price
+        sale.innerText=product.discount
+        edit.innerText="Edit"
+        del.innerText="Delete"
+        card.append(image,id,
+        name,price,sale,edit,del)
+
+        // card.append(del,edit)
+         datatable.append(card)
+
+
+        // console.log(product.row_id)
+
+        delid=product.id
+
+        editid=product.id
+
+        edit
+        // ********************************************************
+        edit.addEventListener("click",()=>{
+            addid.value=product.id;
+            addtitle.value=product.title;
+            addimage.value=product.image;
+            addprice.value=product.price;
+            addsale.value=product.discount;
+            console.log(product.id)
+        })
+         
+        // *********************************************************
+
+        //delet product
+      del.addEventListener("click",delproduct)
+
+         //  delete from dom using delete request on json-server 
+       async function delproduct(){
+           try{
+              let delreq=await fetch(`${url}/${product.id}`,{
+               method:"delete",
+               headers:{
+                       "Content-Type": "application/json"
+                      },
+              })
+            }catch(err){
+                    console.log(err)
+            }
+
+            await fetchData(url)
+      }
+// ******************************************************************
+
+    });
+}
+
+// catching update button here 
+let updatebtn=document.getElementById("update");
+update.addEventListener("click",(e)=>{
+    e.preventDefault();
+    let id=addid.value;
+    let offer=addtitle.value;
+    let image=addimage.value;
+    let price=addprice.value;
+    let discount=addsale.value;
+
+    console.log(id,offer,image,price,discount)
+    updateProduct(id,offer,image,price,discount);
+    fetchData(url)
+})
+
+// update function 
+function updateProduct(id,offer,image,price,discount){
+    let data={
+        id,image,offer,discount,price
+    }
+    fetch(`${url}/${id}`,{
+      method:'PUT',
+      body:JSON.stringify(data),
+      headers:{"Content-Type":"application/json"}
+    })
+   console.log(data)
+  }
+
+
+</script>
+</html>
