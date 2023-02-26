@@ -171,49 +171,70 @@
         #total{
             margin-left: 100px;
         }
+        .para{
+          color: red;
+          text-align: justify;
+          padding: 20px;
+        }
+        .imghover:hover{
+          transform: scale(1.1)
+        }
+        .plus:hover{
+          transform: scale(1.5)
+        }
+        .minus:hover{
+          transform: scale(1.5)
+        }
+        #promo{
+          height: 150px;
+          width: 150px;
+          margin-left: 60px;
+          margin-bottom: 40px;
+        }
 </style>
 <body>
     <div id="navbar">
-
-        
-   <header>
-    <div class="mainhead">
-      <!-- <div class="small-mainheadrow">
-      </div> -->
-      <div class="mainheadrow">
-        <div>
-         <a href=""><img id="logo_" src="./picture/logo.png.png" alt=""></a>
-        </div>
-        
-
-        <div>
-          <div style="display: inline-block">
-            <span>MEN</span>
-            <span>WOMEN</span>
-            <span>ACCESSORIES</span>
-          </div>
-        </div>
-        <div>
-          <form action="">
+      <header>
+        <div class="mainhead">
+          <!-- <div class="small-mainheadrow">
+          </div> -->
+          <div class="mainheadrow">
+            <div>
+              <a href="home.html"><img src="./picture/logo.jpg" alt="beUnikue.com logo" style="height: 35px;"/></a>
+            </div>
             
-            <i id="search" class="fas fa-search"></i>
-            <input class="search2" type="text" placeholder="Search by product, category or collection" />
-            <i class="icon"></i>
-          </form>
-        </div>
-        <div>
-          <span><a><i class="fas fa-grip-lines-vertical"></i></a></span>
-          <div>
-            <a href="#"> <span id="tag"> Login</span> </a>
+  
+            <div>
+              <div style="display: inline-block">
+                <a href="./filter.html"><span>MEN</span></a>
+                <a href="./filter.html"><span>WOMEN</span></a>
+                <a href="./filter.html"><span>ACCESSORIES</span></a>
+              </div>
+            </div>
+            <div>
+              <form action="">
+                
+                <i id="search" class="fas fa-search"></i>
+                <input class="search2" type="text" placeholder="Search by product, category or collection" />
+                <i class="icon"></i>
+              </form>
+            </div>
+            <div>
+              <span><a><i class="fas fa-grip-lines-vertical"></i></a></span>
+              <div>
+                <a href="#"> <span id="tag"> Login</span> </a>
+              </div>
+  
+              <span><a href="#" ><i class="far fa-heart"></i></a></span>
+              <span><a id="cart_btn" href="#"><i class="fas fa-shopping-bag"></i></a></span>
+            </div>
           </div>
-
-          <span><a href="#" ><i class="far fa-heart"></i></a></span>
-          <span><a href="#" id="cart"><i class="fas fa-shopping-bag"></i></a></span>
+          <hr style="border: none; width: 100%;">  
         </div>
-      </div>
-      <hr style="border: none; width: 100%;">  
-    </div>
-  </header>
+      </header>
+   
+        
+  
      
     </div>
 
@@ -223,8 +244,11 @@
 
    <h1 id="cart_item">Cart Item</h1>
     <h2 id="total">Total price of cart:- <span id="total_price">0</span></h2>
+   
      <input type="text" id="coupon" placeholder="ADD COUPON">
      <button id="coupon_btn">Submit</button>
+      <a href="./payment.html"><button id="buy">Buy Cart Product</button></a>
+    
 
     <div id="Cont"></div>
     <!-- <h1 ><span id="qunat">0</span></h1> -->
@@ -235,15 +259,21 @@
 <script>
     var count =1;
     var cont = document.getElementById("Cont")
-    var ls_data = JSON.parse(localStorage.getItem("buy"));
+    var ls_data = JSON.parse(localStorage.getItem("cart"));
     if(ls_data===null){
         ls_data=[]
     }
 
     var total_price=0
+    console.log(ls_data)
  
 //    var sum=document.getElementById("total_price")
 // sum.innerText=total_price
+// var buy = document.getElementById("buy")
+// buy.addEventListener("click",()=>{
+//   // window.localStorage.href="payment.html"
+//   console.log("Yes")
+// })
 
 
     function display(allData){
@@ -253,7 +283,8 @@ allData.forEach(ele=>{
     var div = document.createElement("div")
     div.setAttribute("class","card")
    var image = document.createElement("img");
-   image.setAttribute("src",ele.Image)
+   image.setAttribute("class","imghover")
+   image.setAttribute("src",ele.image)
 
    var Rating= document.createElement("p");
    Rating.innerText=`Rating:-${ele.Rating}`
@@ -262,7 +293,8 @@ allData.forEach(ele=>{
    size.innerText=`Size:-${ele.size}`
 
    var shoes= document.createElement("p");
-   shoes.innerText=`category:-${ele.category}`
+   shoes.setAttribute("class","para")
+   shoes.innerText=`${ele.title}`
 
    var h4 = document.createElement("h4");
    h4.innerText=ele.website
@@ -271,26 +303,30 @@ allData.forEach(ele=>{
    p.innerText=ele.title
 
    var price = document.createElement("h2");
-   price.innerText=`$${ele.price}`
+   price.innerText=`${ele.price}`
 
    var add = document.createElement("h1");
    add.innerText=count
-   total_price=total_price+ele.price
+   total_price=total_price+(+ele.price.replace('₹',''))
+console.log(typeof (+ele.price.replace('₹','')))
 
    var btn1= document.createElement("button")
+   btn1.setAttribute("class","plus")
    btn1.innerHTML="+"
    btn1.addEventListener("click",()=>{
     // console.log("yes")
     count++
     add.innerText=count
     var sum=document.getElementById("total_price")
-     sum.innerText=total_price+ele.price
-    total_price=total_price+ele.price
+     sum.innerText=total_price+(+ele.price.replace('₹',''))
+     console.log((+ele.price.replace('₹','')))
+    total_price=total_price+(+ele.price.replace('₹',''))
     // console.log(total_price)
    })
   
 
    var btn2= document.createElement("button")
+   btn2.setAttribute("class","minus")
    btn2.innerHTML="-"
    btn2.addEventListener("click",()=>{
     // count=1
@@ -298,8 +334,8 @@ allData.forEach(ele=>{
         count--
         add.innerText=count
     var sum=document.getElementById("total_price")
-     sum.innerText=total_price-ele.price
-    total_price=total_price-ele.price
+     sum.innerText=total_price-(+ele.price.replace('₹',''))
+    total_price=total_price-(+ele.price.replace('₹',''))
     }
 
     // add.innerText=count
@@ -311,13 +347,18 @@ allData.forEach(ele=>{
   
     // console.log(count)
 
-  
+  var remove = document.createElement("button")
+  remove.innerText="Remove"
+
+  remove.addEventListener("click",()=>{
+   
+  })
 
   
   
    
 
-   div.append(image,shoes,price,btn1,btn2,add)
+   div.append(image,shoes,price,btn1,btn2,add,remove)
    cont.append(div)
 })
 }
@@ -333,12 +374,14 @@ var submit_coupon = document.getElementById("coupon_btn")
 submit_coupon.addEventListener("click",()=>{
   if(coupon.value==="Yash30"){
     var x = (Math.floor(total_price*70/100))
-    console.log(x)
+  
     sum.innerText=x
   }
 })
+// function removedata()
 
 // console.log(coupon.value)
-
-    
+// var res = "₹346"
+// var newStr = res.replace('₹','')
+// console.log(newStr)
 </script>
