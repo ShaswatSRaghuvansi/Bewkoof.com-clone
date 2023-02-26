@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-SlzVSkHI83c6WzlF8EUnY6DyV7qnOwd6WzVvjGv0iD+H7ZG0S0B5f5Y5sj3boLw4JO4qW35Q2zvJCG3qsm3tNQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style/home_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,500;1,200;1,400;1,500&display=swap" rel="stylesheet" />
+      <script src="https://kit.fontawesome.com/f1eae3bf56.js" crossorigin="anonymous"></script>
+  <!-- scipt for the sliding banner -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/69a804f5c4.js" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+
+<!-- registration - button hover / localstorage stores only latest / login page to be redirected / logo to index.html-->
+    
+    <header>
+      <div class="mainhead">
+        <!-- <div class="small-mainheadrow">
+        </div> -->
+        <div class="mainheadrow">
+          <div>
+            <a href="index.html"><img src="./pictures/Logo.jpg" alt="beUnikue.com logo" style="height: 35px;"/></a>
+          </div>
+          
+
+          <div>
+            <div style="display: inline-block">
+              <span><a href="#">MEN</a> </span>
+              <span><a href="#">WOMEN</a></span>
+              <span><a href="#">ACCESSORIES</a></span>
+            </div>
+          </div>
+          <div>
+            <form action="">
+              
+              <i id="search" class="fas fa-search"></i>
+              <input class="search2" type="text" placeholder="  Search by product, category or collection" />
+              <i class="icon"></i>
+            </form>
+          </div>
+          <div>
+            <span><a><i class="fas fa-grip-lines-vertical"></i></a></span>
+            <div>
+              <a href="#"> <span id="tag"> Login</span> </a>
+            </div>
+
+            <span><a href="#" ><i class="far fa-heart"></i></a></span>
+            <span><a href="#"><i class="fas fa-shopping-bag"></i></a></span>
+          </div>
+        </div>
+        <hr style="border: none; width: 100%;">  
+      </div>
+    </header>
+
+    <div class="login">
+      <div>
+        <h1>Welcome to the world of Bewakoof!</h1>
+        <img
+          src="https://images.bewakoof.com/web/group-19-1617704502.png"
+          alt="Welcome to Bewakoof"
+        />
+      </div>
+
+      <div class="input">
+        <h2>Log in / Sign up</h2>
+        <h4>for Latest trends, exciting offers and everything Bewakoof!</h4>
+        <div class="form-fill">
+          <input type="tel" placeholder="Enter Mobile Number" />
+        </div>
+        <div class="form-fill">
+          <a href="regsiter.html"><input id="continue" type="submit" name="submit" value="CONTINUE" /></a>
+        </div>
+        <div id="or-line">
+          <div class="center-line"></div>
+          <div id="or">OR</div>
+          <div class="center-line"></div>
+        </div>
+        <div id="upper-buttons">
+          <a href="index2.html"><input id="continue2" type="submit" name="submit" value="ADMIN LOGIN" /></a>
+        </div>
+     <div id="lower-buttons">
+  <button><i class="fab fa-google"></i> Google</button>
+  <button><i class="fa-brands fa-facebook"></i> Facebook</button>
+</div>
+
+        <p>
+          By creating an account or logging in, you agree with Bewakoof's
+          <a href="">Terms and Conditions</a> and <a href="">Privacy Policy</a>.
+        </p>
+      </div>
+    </div>
+  </body>
+  <script>
+function generateOTP() {
+ 
+  let otp = Math.floor(100000 + Math.random() * 900000);
+
+  sessionStorage.setItem("otp", otp);
+
+
+  alert(`Your OTP is: ${otp}`);
+  window.location.href = "register.html";
+}
+
+
+let continueBtn = document.getElementById("continue");
+
+continueBtn.addEventListener("click", generateOTP);
+
+
+  </script>
+  
+
+</html>
+
