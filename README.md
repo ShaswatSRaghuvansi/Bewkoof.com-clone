@@ -1,7 +1,9 @@
-# bewkoof.com clone
+# **bewkoof.com clone**
 ![Logo](https://user-images.githubusercontent.com/115460278/221364908-8395ed36-3ab5-40e2-9faa-0946f69168f3.jpg)
 
-https://github.com/ShaswatSRaghuvansi/squalid-direction-3013
+**https://github.com/ShaswatSRaghuvansi/squalid-direction-3013**
+<br>
+**Here you can see the project: https://beunikue.netlify.app/**
 
 ## Powered By
 <ul>
@@ -29,6 +31,8 @@ https://github.com/ShaswatSRaghuvansi/squalid-direction-3013
 <li>Functionality to add a product to wishlist and cart</li>
 <li>Functionality to make a payments</li>
 <li>Added booking success display functionality</li>
+<li>Admin Page Operations</li>
+<li>LocalStorage Server for getting Products</li>
 </ul>
 
 ## Tech-Stack
@@ -69,4 +73,4 @@ https://github.com/ShaswatSRaghuvansi/squalid-direction-3013.git
 ![Footer Page](https://user-images.githubusercontent.com/115460278/221413018-956c93a7-16fc-4164-a5b3-090d7bfe734a.png)
 
 
-Here you can see the project: https://beunikue.netlify.app/
+
