@@ -1,0 +1,1 @@
+steps--> terminal-> npm run server

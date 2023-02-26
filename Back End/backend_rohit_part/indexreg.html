@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<style>
+*{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(85, 85, 85);
+text-align: center;
+text-shadow:2px black;
+
+}
+body{
+ background-color:#EDF1D6 ; 
+}
+.login-form{
+   margin: auto;
+    
+    border: .5px solid rgb(255, 255, 255);
+  
+    display: flex;
+    flex-direction: column  ;
+    align-items: center;
+    border-radius: 25px;
+}
+input{
+    color: #332C39;
+    border: none;
+
+    width: 300px;
+    outline: none;
+    text-align: justify;
+    padding: 12px 15px;
+    margin: 5px;
+    font-size: 15px;
+    border-radius: 5px
+}
+.pagecontent{
+    padding: 0px 0px 50px;
+    /* padding-top: 5%;
+text-align: center;
+display: flex;
+margin: auto; */
+
+display: grid;
+grid-template-columns: repeat(2,1fr);
+
+
+}
+.image{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.image>img{
+    width: 100%;
+    justify-content: flex-end;
+}
+button{
+   
+    padding: 10px 40px 10px;
+    margin: 5px;
+    font-size: 15px;
+outline: none;
+color: rgb(52, 52, 52);
+border: 1px solid rgb(255, 255, 255) ;
+    border-radius: 8px
+}
+button:hover{
+    background-color: rgba(132, 130, 130, 0.559);
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(158, 158, 158) ;
+}
+.terms{
+    width: 80%;
+    text-align: justify;
+    margin: 35px;
+    color: rgb(85, 85, 85);
+}
+h3{
+    margin: 0px;
+    font-size: 15px;
+}
+h2{
+    font-size: 30px;
+}
+#reg-btn{
+    margin-top: 30px;
+}
+h1{border-radius: 5px;
+    background-color: white;
+    border: 1px solid white;
+    padding: 10px 10px 10px;
+}
+</style>
+<h1>Admin Portal</h1>
+<div class="pagecontent">
+ 
+
+<div class="image">
+    <img src="https://letstranzact.com/_nuxt/image/5f39e0.webp" alt="image">
+</div>
+
+
+<div class="login-form">
+    <h2 id="logintext">Regiter Now</h2>
+    <input type="text" id="name" name="name" placeholder="Name" required>
+<input type="text" id="mobile" name="Mobile No" placeholder="Mobile No" required>
+<input type="email" id="email" name="email" placeholder="Email" required>
+<button id="reg-btn" type="submit"> Register User</button>
+
+<h3>OR</h3>
+<button>CONTINUE WITH EMAIL</button>
+<div class="goog-fb">
+
+    <button>GOOGLE</button>
+    <button>FACEBOOK</button>
+
+
+</div>
+
+<div class="terms">
+    
+    <p> Already have an account? just <a href="index.html"> log-in</a> </p>
+
+    By creating an account or logging in, you agree with Be-Unique®'s <a href="#">Terms and Conditions</a>
+     and <a href="#">Privacy Policy.</a> 
+</div>
+
+
+</div>
+
+</div>
+    
+</body>
+<script>
+
+let logintext=document.getElementById("logintext")
+let regname=document.getElementById("name")
+let regemail=document.getElementById("email")
+let regnumber=document.getElementById("mobile")
+
+let regbtn=document.getElementById("reg-btn")
+
+//let regarr=JSON.parse(localStorage.getItem("registration"))||[]
+
+let regarr=[]
+
+regbtn.addEventListener("click",()=>{
+
+let regobj={}
+regobj.name=regname.value,
+regobj.email=regemail.value,
+regobj.number=regnumber.value
+console.log(regobj)
+
+
+if(regobj.name=="" || regobj.email==""||regobj.number==""){
+    logintext.innerText="PLease fill all the details"
+    setTimeout(() => {
+    logintext.innerText=("Register Now")
+ 
+}, 900);
+
+}else{
+
+
+    regarr.push(regobj)
+localStorage.setItem("regdata",JSON.stringify(regarr))
+
+setTimeout(() => {
+    logintext.innerText=("Registration -successfull-")
+ 
+}, 1000);
+
+
+setTimeout(() => {
+  
+    window.location.href="index.html"
+}, 2000);
+
+}
+
+
+
+
+})
+
+
+
+</script>
+</html>
