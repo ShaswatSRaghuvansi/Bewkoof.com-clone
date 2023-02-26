@@ -146,7 +146,7 @@ button {
     font-size: 16px;
 }
 button {
-  background: linear-gradient(to bottom, #4c9eaf, #00ff11);
+  background: linear-gradient(to bottom, #fa711c, #fc1313);
   border: none;
   color: white;
   padding: 10px 20px;
@@ -157,5 +157,8 @@ button {
 
 
 body {
-  background-color: #f7f7f7;
+  background: #a8ff78;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #78ffd6, #a8ff78);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #78ffd6, #a8ff78); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
 }

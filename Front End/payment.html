@@ -61,7 +61,7 @@
 
       
       <div class="payment-box" >
-        <h1 style="text-align: center; padding-left: 50px;">Payment Page</h1>
+        <h1 style="text-align: center; padding-left: 150px;">Payment Page</h1>
         <div id="lower_box">
             <div id="lower_box_left">
                 <div id="active">&nbsp; DEBIT/CREDIT CARD </div>
@@ -82,7 +82,7 @@
                     
                         <div>
                             <img width="20px" src="https://images.bewakoof.com/web/Add-card-icon-1600332484.png" alt="">
-                            <span id="new_card">Add New Card</span>
+                            <span id="new_card">Enter Card Details</span>
                         </div>
 
 
@@ -116,9 +116,14 @@
 
                         <div>
                             
-                           <button  onclick="pay_now()" type="button" class="btn btn-info"><a href="ordercomplete.html">Pay Now</a></button>
+                           <button  onclick="pay_now()" type="button" class="btn btn-info">
+                            <!-- <a href="ordercomplete.html">Pay Now</a> -->Pay Now
+                          </button>
+
                         </div>
-                    
+                    <div class="succ">
+                      <h3 id="succ"></h3>
+                    </div>
 
         
 </body>
@@ -128,7 +133,7 @@
 
 function pay_now() {
     
-  let payarr = [];
+
   var cardNumber = document.getElementById("num_card").value;
   var cardName = document.getElementsByName("card_name")[0].value;
   var cardExpiry = document.getElementsByName("card_expiry")[0].value;
@@ -172,19 +177,47 @@ function pay_now() {
   obj.cardName = cardName
   obj.cardCVV = cardCVV
   obj.cardExpiry = cardExpiry
-  payarr.push(obj);
-  localStorage.setItem("payment" , payarr)
+  paymentarr.push(obj);
+  localStorage.setItem("payment" ,JSON.stringify(paymentarr))
 
-  console.log(payarr)
+  console.log(paymentarr)
   // Store card details in local storage
-  localStorage.setItem("cardNumber", cardNumber);
-  localStorage.setItem("cardName", cardName);
-  localStorage.setItem("cardExpiry", cardExpiry);
-  localStorage.setItem("cardCVV", cardCVV);
+  // localStorage.setItem("cardNumber", cardNumber);
+  // localStorage.setItem("cardName", cardName);
+  // localStorage.setItem("cardExpiry", cardExpiry);
+  // localStorage.setItem("cardCVV", cardCVV);
   
   // If all validations pass, proceed to payment
-  alert("Payment successful!");
-  return true;
+ 
+ 
+ 
+ // alert("Payment successful!");
+  
+ let succ=document.getElementById("succ")
+
+ setTimeout(() => {
+            
+  succ.innerText="Payment is processing"
+        }, 500);
+
+
+
+        setTimeout(() => {
+            
+          succ.innerText="Congratulations!!🎉Payment Successfull redirecting to new page🎊"
+                  }, 3000);
+          
+
+        
+
+ 
+ setTimeout(() => {
+            
+            window.location.href="ordercomplete.html"
+        }, 5500);
+
+
+ return true;
 }
 
 
