@@ -1,0 +1,170 @@
+[
+
+    {   "id":"1",
+        "brand":"SUNNERSTA",
+        "category":"kitchen",
+        "image":"https://www.ikea.com/in/en/images/products/sunnersta-hook__0712629_pe728945_s5.jpg?f=xl",
+        "desc":"Hook",
+        "price": "39",
+        "cuttoffprice":"67",
+        "rating":"4"
+    },
+    
+    
+    {    "id":"2",
+        "brand":"SMACKER",
+        "category":"Kitchen",
+        "image":"https://www.ikea.com/in/en/images/products/sunnersta-container-red__0734514_pe739484_s5.jpg?f=xl",
+        "desc":"Container, red 12X11 cm(4.3/4X4 3/8)",
+        "price": "159",
+        "cuttoffprice":"35",
+        "rating":"3.5"
+    },
+    
+    
+    {    "id":"3",
+        "brand":"SkTTAN",
+        "category":"Kitchen",
+        "image":"https://www.ikea.com/in/en/images/products/skattan-container__0805592_pe769612_s5.jpg?f=xl",
+        "desc":"Container, Black",
+        "price": "99",
+        "cuttoffprice":"35",
+        "rating":"4"
+    },
+    
+    {    "id":"4",
+        "brand":"SMACKER",
+        "category":"Kitchen",
+        "image":"https://www.ikea.com/in/en/images/products/grundtal-s-hook-stainless-steel__19774_pe081016_s5.jpg?f=xl",
+        "desc":"Hanger,Steel (Pack of 5)",
+        "price": "79",
+        "cuttoffprice":"35",
+        "rating":"5"
+    }
+    ,
+    {    "id":"7",
+        "brand":"PRUTA",
+        "category":"Kitchen",
+        "image":"https://www.ikea.com/in/en/images/products/pruta-food-container-set-of-17-transparent-green__0711382_pe728174_s5.jpg?f=xl",
+        "desc":"Food container, set of 17, transparent/green",
+        "price": "449",
+        "cuttoffprice":"35",
+        "rating":"3.5"
+    }
+    
+    
+    
+    ,
+    {    "id":"6",
+        "brand":"IKEA 365+ VÄRDEFULL",
+        "category":"Kitchen",
+        "image":"https://www.ikea.com/in/en/images/products/ikea-365-vaerdefull-garlic-press-black__0713030_pe729209_s5.jpg?f=xl",
+        "desc":"Garlic press, black(Steel Body",
+        "price": "609",
+        "cuttoffprice":"35",
+        "rating":"3.5"
+    }
+    
+    
+    
+    ,
+    {    "id":"6",
+        "brand":"IKEA 365+",
+        "category":"Kitchen",
+        "image":"https://www.ikea.com/in/en/images/products/ikea-365-mandoline-black__0739884_pe741892_s5.jpg?f=xl",
+        "desc":"GRATER, Mandoline, black",
+        "price": "509",
+        "cuttoffprice":"35",
+        "rating":"3.5"
+    }
+    
+    
+    
+    ,
+    {    "id":"6",
+        "brand":"FULLÄNDAD",
+        "category":"Kitchen",
+        "image":"https://www.ikea.com/in/en/images/products/fullaendad-5-piece-kitchen-utensil-set-grey__0711751_pe728440_s5.jpg?f=xl",
+        "desc":"5-piece kitchen utensil set, grey",
+        "price": "369",
+        "cuttoffprice":"35",
+        "rating":"4"
+    }
+    
+    
+    
+    ,
+    {    "id":"6",
+        "brand":"IDEALISK",
+        "category":"Kitchen",
+        "image":"https://www.ikea.com/in/en/images/products/idealisk-grater-stainless-steel__0713134_pe729282_s5.jpg?f=xl",
+        "desc":"Grater, stainless steel",
+        "price": "199",
+        "cuttoffprice":"35",
+        "rating":"3.5"
+    }
+    
+    
+    
+    ,
+    {    "id":"6",
+        "brand":"SNITSIG",
+        "category":"Kitchen",
+        "image":"https://www.ikea.com/in/en/images/products/snitsig-saucepan-with-lid-stainless-steel__0712831_pe729094_s5.jpg?f=s",
+        "desc":"Saucepan with lid, stainless steel, 1 l (1.1 qt)",
+        "price": "599",
+        "cuttoffprice":"35",
+        "rating":"4.5"
+    }
+    
+    
+    
+    
+    ,
+    {    "id":"8 ",
+        "brand":"SMACKER",
+        "category":"Shoe",
+        "image":"https://www.ikea.com/in/en/images/products/skubb-shoe-box-dark-grey__0573441_pe667779_s5.jpg?f=xl",
+        "desc":"Shoe box, dark grey, 22x34x16 cm (8 ¾x13 ½x6 ¼ )",
+        "price": "799",
+        "cuttoffprice":"35",
+        "rating":"3.5"
+    }
+    
+    
+    
+    ,
+    {    "id":"6",
+        "brand":"SMACKER",
+        "category":"Kitchen",
+        "image":"https://www.ikea.com/in/en/images/products/uppdatera-cutlery-caddy-anthracite__0972400_pe811937_s5.jpg?f=xl",
+        "desc":"Cluttery Candy,Black 12X12 cm(4.3/4X4 3/8)",
+        "price": "399",
+        "cuttoffprice":"35",
+        "rating":"3.5"
+    }
+    
+    
+    
+    
+    
+    ,
+    {    "id":"6",
+        "brand":"SMACKER",
+        "category":"Kitchen",
+        "image":"https://www.ikea.com/in/en/images/products/uppdatera-cutlery-caddy-anthracite__0972400_pe811937_s5.jpg?f=xl",
+        "desc":"Cluttery Candy,Black 12X12 cm(4.3/4X4 3/8)",
+        "price": "399",
+        "cuttoffprice":"35",
+        "rating":"3.5"
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    ]

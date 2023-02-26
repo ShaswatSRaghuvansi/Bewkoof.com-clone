@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://kit.fontawesome.com/69a804f5c4.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <style>
@@ -17,8 +16,7 @@ text-shadow:2px black;
 
 }
 body{
-    background-color:#EDF1D6 ;
-   
+ background-color:#EDF1D6 ; 
 }
 .login-form{
    margin: auto;
@@ -110,24 +108,26 @@ h1{border-radius: 5px;
 
 
 <div class="login-form">
-    <h2 id="logintext">Login to move</h2>
+    <h2 id="logintext">Regiter Now</h2>
+    <input type="text" id="name" name="name" placeholder="Name" required>
 <input type="text" id="mobile" name="Mobile No" placeholder="Mobile No" required>
-<p id="otpalert"></p>
-<button id="otpbtn" type="submit"> Send OTP</button>
-<input type="number" id="otp" name="OTP" placeholder="Type 4-Digit OTP" required>
-<button id="loginbtn" type="submit">LOG-IN</button>
+<input type="email" id="email" name="email" placeholder="Email" required>
+<button id="reg-btn" type="submit"> Register User</button>
+
 <h3>OR</h3>
-<button><i class="fa fa-solid fa-envelope"></i> CONTINUE WITH EMAIL</button>
+<button>CONTINUE WITH EMAIL</button>
 <div class="goog-fb">
 
-    <button><i class="fa-brands fa-google"></i> GOOGLE</button>
-    <button><i class="fa-brands fa-facebook"></i> FACEBOOK</button>
+    <button>GOOGLE</button>
+    <button>FACEBOOK</button>
 
 
 </div>
 
 <div class="terms">
-    <p> Don't have an account? just <a href="indexreg.html">create one</a> </p>
+    
+    <p> Already have an account? just <a href="index.html"> log-in</a> </p>
+
     By creating an account or logging in, you agree with Be-Unique®'s <a href="#">Terms and Conditions</a>
      and <a href="#">Privacy Policy.</a> 
 </div>
@@ -141,84 +141,55 @@ h1{border-radius: 5px;
 <script>
 
 let logintext=document.getElementById("logintext")
-let mobile=document.getElementById("mobile")
-let otp=document.getElementById("otp")
-let otpbtn=document.getElementById("otpbtn")
-let loginbtn=document.getElementById("loginbtn")
-let otpalert=document.getElementById("otpalert")
-let otpel=otp.value;
-let mobileel=mobile.value
+let regname=document.getElementById("name")
+let regemail=document.getElementById("email")
+let regnumber=document.getElementById("mobile")
 
-let regdata=JSON.parse(localStorage.getItem("regdata"))
+let regbtn=document.getElementById("reg-btn")
+
+//let regarr=JSON.parse(localStorage.getItem("registration"))||[]
+
+let regarr=[]
+
+regbtn.addEventListener("click",()=>{
+
+let regobj={}
+regobj.name=regname.value,
+regobj.email=regemail.value,
+regobj.number=regnumber.value
+console.log(regobj)
 
 
-let  otppin;
-
-otpbtn.addEventListener("click",()=>{
- 
-    
-if(mobile.value=="" ){
+if(regobj.name=="" || regobj.email==""||regobj.number==""){
     logintext.innerText="PLease fill all the details"
     setTimeout(() => {
     logintext.innerText=("Register Now")
  
 }, 900);
 
+}else{
+
+
+    regarr.push(regobj)
+localStorage.setItem("regdata",JSON.stringify(regarr))
+
+setTimeout(() => {
+    logintext.innerText=("Registration -successfull-")
+ 
+}, 1000);
+
+
+setTimeout(() => {
+  
+    window.location.href="index.html"
+}, 2000);
+
 }
 
 
 
 
-
-    // console.log(obj)
-    otppin=Math.ceil(Math.random()*10000)
-alert("OTP sent to registered mobile number")
-
-alert(`Your OTP is ${otppin} ` )
-
-let obj={
-        mobile:mobileel,
-        otp:otpel
-    }
-
 })
-console.log(otppin)
-loginbtn.addEventListener("click",()=>{
-
-    
-    // if(otppin==undefined){
-    //   otpalert.innerText="Mobile No & OTP Required to Log-in"
-    // }else if(otpel==otppin){
-
-
-        setTimeout(() => {
-            otpalert.innerText="log-in Successfull"  
- 
-}, 900);
-
-
-setTimeout(() => {
-            
-    window.location.href="admin.html"
-}, 2000);
-// }
-
-
-
-  
-})
-
-
-// if(otppin==undefined){
-//       otpalert.innerText="send otp first"
-//     }
-// regbtn.addEventListener("click",()=>{
-
-
-
-
-
-// })
 
 
 
