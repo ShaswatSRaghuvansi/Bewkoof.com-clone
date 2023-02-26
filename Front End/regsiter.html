@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register</title>
   <style>
+    *{font-family: Arial, Helvetica, sans-serif;}
     body {
       background-color: #fffdf5;
       margin: 0;
@@ -113,13 +114,38 @@
       color: #999;
       font-weight: normal;
     }
+
+    #btn {
+      background-color: #5b5bff;
+      color: #fff;
+      padding: 16px 32px;
+      border: none;
+      border-radius: 30px;
+      font-size: 24px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      margin-top: 40px;
+      transition: all 0.2s ease-in-out;
+    }
+
+    #btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.5);
+      background-color: #3636ff;
+    }
   </style>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-SlzVSkHI83c6WzlF8EUnY6DyV7qnOwd6WzVvjGv0iD+H7ZG0S0B5f5Y5sj3boLw4JO4qW35Q2zvJCG3qsm3tNQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-   <link rel="stylesheet" href="./style/home_style.css">
-   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,500;1,200;1,400;1,500&display=swap" rel="stylesheet" />
-     <script src="https://kit.fontawesome.com/f1eae3bf56.js" crossorigin="anonymous"></script>
- <!-- scipt for the sliding banner -->
- <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-SlzVSkHI83c6WzlF8EUnY6DyV7qnOwd6WzVvjGv0iD+H7ZG0S0B5f5Y5sj3boLw4JO4qW35Q2zvJCG3qsm3tNQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./style/home_style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,500;1,200;1,400;1,500&display=swap"
+    rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/f1eae3bf56.js" crossorigin="anonymous"></script>
+  <!-- scipt for the sliding banner -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
 </head>
 
 <body>
@@ -129,9 +155,9 @@
       </div> -->
       <div class="mainheadrow">
         <div>
-          <a href="home.html"><img src="./pictures/Logo.jpg" alt="beUnikue.com logo" style="height: 35px;"/></a>
+          <a href="index.html"><img src="./pictures/Logo.jpg" alt="beUnikue.com logo" style="height: 35px;" /></a>
         </div>
-        
+
 
         <div>
           <div style="display: inline-block">
@@ -142,7 +168,7 @@
         </div>
         <div>
           <form action="">
-            
+
             <i id="search" class="fas fa-search"></i>
             <input class="search2" type="text" placeholder="  Search by product, category or collection" />
             <i class="icon"></i>
@@ -154,11 +180,11 @@
             <a href="#"> <span id="tag"> Login</span> </a>
           </div>
 
-          <span><a href="#" ><i class="far fa-heart"></i></a></span>
+          <span><a href="#"><i class="far fa-heart"></i></a></span>
           <span><a href="#"><i class="fas fa-shopping-bag"></i></a></span>
         </div>
       </div>
-      <hr style="border: none; width: 100%;">  
+      <hr style="border: none; width: 100%;">
     </div>
   </header>
 
@@ -173,7 +199,7 @@
 
       <div>
         <h2>Register Yourself !</h2>
-        <h3>Hi new buddy, let's get you started with the bewakoofi!</h3>
+        <h3>Hello buddy, Let's get you started with the Registrations!</h3>
 
         <form id="register-form">
 
@@ -194,37 +220,38 @@
 
 
 <script>
-  const registerForm = document.getElementById('register-form');
+  let registerForm = document.getElementById('register-form');
 
   registerForm.addEventListener('submit', function (event) {
-    event.preventDefault(); // prevent form submission and page reload
-    const nameInput = document.getElementById('name');
-    const emailInput = document.getElementById('email');
-    const passwordInput = document.getElementById('password');
-    const confirmPasswordInput = document.getElementById('confirm-password');
+    event.preventDefault();
 
-    const name = nameInput.value.trim();
-    const email = emailInput.value.trim();
-    const password = passwordInput.value;
-    const confirmPassword = confirmPasswordInput.value;
+    let name = document.getElementById('name').value.trim();
+    let email = document.getElementById('email').value.trim();
+    let password = document.getElementById('password').value;
+    let confirmPassword = document.getElementById('confirm-password').value;
 
-    // Check if passwords match
+
     if (password !== confirmPassword) {
       alert('Passwords do not match');
       return;
     }
 
-    // Store user data in local storage
-    const user = {
+
+    let userData = JSON.parse(localStorage.getItem('userData')) || {};
+
+    let newUser = {
       name: name,
       email: email,
       password: password
     };
-    localStorage.setItem('loggedInUser', JSON.stringify(user));
+    let userId = Object.keys(userData).length + 1;
+    userData[userId] = newUser;
+
+
+    localStorage.setItem('userData', JSON.stringify(userData));
 
     alert('Registration successful! Please log in.');
 
-    // Redirect to login page
     window.location.href = 'loginmain.html';
   });
 
