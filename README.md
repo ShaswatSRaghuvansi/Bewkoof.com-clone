@@ -11,6 +11,7 @@
 <li>CSS</li>
 <li>JS DOM</li>
 <li>LocalStorage</li>
+<li>Netlify</li>
 </ul>
 
 ## Libraries used
