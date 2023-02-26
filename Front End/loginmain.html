@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="loginmain.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-SlzVSkHI83c6WzlF8EUnY6DyV7qnOwd6WzVvjGv0iD+H7ZG0S0B5f5Y5sj3boLw4JO4qW35Q2zvJCG3qsm3tNQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./style/home_style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,500;1,200;1,400;1,500&display=swap"
+    rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/f1eae3bf56.js" crossorigin="anonymous"></script>
+  <!-- scipt for the sliding banner -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+
+
+</head>
+
+<body>
+  <header>
+    <div class="mainhead">
+      <!-- <div class="small-mainheadrow">
+      </div> -->
+      <div class="mainheadrow">
+        <div>
+          <a href="home.html"><img src="./pictures/Logo.jpg" alt="beUnikue.com logo" style="height: 35px;" /></a>
+        </div>
+
+
+        <div>
+          <div style="display: inline-block">
+            <span><a href="#">MEN</a> </span>
+            <span><a href="#">WOMEN</a></span>
+            <span><a href="#">ACCESSORIES</a></span>
+          </div>
+        </div>
+        <div>
+          <form action="">
+
+            <i id="search" class="fas fa-search"></i>
+            <input class="search2" type="text" placeholder="  Search by product, category or collection" />
+            <i class="icon"></i>
+          </form>
+        </div>
+        <div>
+          <span><a><i class="fas fa-grip-lines-vertical"></i></a></span>
+          <div>
+            <a href="#"> <span id="tag"> Login</span> </a>
+          </div>
+
+          <span><a href="#"><i class="far fa-heart"></i></a></span>
+          <span><a href="#"><i class="fas fa-shopping-bag"></i></a></span>
+        </div>
+      </div>
+      <hr style="border: none; width: 100%;">
+    </div>
+  </header>
+
+
+  <div class="left-side"></div>
+  <div class="input-taking">
+    <h2>Login Here !</h2>
+    <form id="login-form">
+      <input class="typing" id="email" type="email" placeholder="Email" required>
+      <input class="typing" id="password" type="password" placeholder="Password" required>
+      <input id="btn" type="submit" value="LOGIN">
+    </form>
+  </div>
+</body>
+
+<script>
+  const loginForm = document.getElementById('login-form');
+
+  loginForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+
+    const email = emailInput.value.trim();
+    const password = passwordInput.value;
+
+    const storedUser = JSON.parse(localStorage.getItem('loggedInUser'));
+    if (!storedUser) {
+      alert('User not found. Please register first.');
+      return;
+    }
+
+
+    if (email !== storedUser.email || password !== storedUser.password) {
+      alert('Invalid email or password. Please try again.');
+      return;
+    }
+
+    alert('Login successful!');
+  });
+
+</script>
+
+</html>

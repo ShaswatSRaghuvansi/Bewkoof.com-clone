@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <style>
+    body {
+      background-color: #fffdf5;
+      margin: 0;
+    }
+
+    #total-signup-page {
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+    }
+
+    #total-signup-page .left-signup {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #fffbec;
+      width: 50%;
+    }
+
+    #total-signup-page .left-signup img {
+      max-height: 100%;
+      max-width: 100%;
+    }
+
+    #total-signup-page .right-signup {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+    }
+
+    #total-signup-page .right-signup>div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 80%;
+      max-width: 500px;
+      padding: 50px;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    #total-signup-page .right-signup>div h2 {
+      font-size: 30px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    #total-signup-page .right-signup>div h3 {
+      font-size: 20px;
+      font-weight: normal;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    #total-signup-page .right-signup>div input {
+      width: 100%;
+      height: 50px;
+      border: none;
+      border-bottom: 1px solid #ccc;
+      outline: none;
+      margin-bottom: 20px;
+      padding-left: 10px;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    #total-signup-page .right-signup>div input::placeholder {
+      color: #999;
+    }
+
+    #total-signup-page .right-signup>div button {
+      width: 100%;
+      height: 60px;
+      border: none;
+      border-radius: 30px;
+      background-color: #fec14e;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-align: center;
+    }
+
+    #total-signup-page .right-signup>div button:hover {
+      background-color: #fcb33d;
+    }
+
+    .typing:focus+label {
+      top: -20px;
+      font-size: 14px;
+      color: #fec14e;
+      font-weight: bold;
+    }
+
+    label {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      transition: top 0.2s, font-size 0.2s, color 0.2s;
+      font-size: 16px;
+      color: #999;
+      font-weight: normal;
+    }
+  </style>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-SlzVSkHI83c6WzlF8EUnY6DyV7qnOwd6WzVvjGv0iD+H7ZG0S0B5f5Y5sj3boLw4JO4qW35Q2zvJCG3qsm3tNQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet" href="./style/home_style.css">
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,500;1,200;1,400;1,500&display=swap" rel="stylesheet" />
+     <script src="https://kit.fontawesome.com/f1eae3bf56.js" crossorigin="anonymous"></script>
+ <!-- scipt for the sliding banner -->
+ <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="mainhead">
+      <!-- <div class="small-mainheadrow">
+      </div> -->
+      <div class="mainheadrow">
+        <div>
+          <a href="home.html"><img src="./pictures/Logo.jpg" alt="beUnikue.com logo" style="height: 35px;"/></a>
+        </div>
+        
+
+        <div>
+          <div style="display: inline-block">
+            <span><a href="#">MEN</a> </span>
+            <span><a href="#">WOMEN</a></span>
+            <span><a href="#">ACCESSORIES</a></span>
+          </div>
+        </div>
+        <div>
+          <form action="">
+            
+            <i id="search" class="fas fa-search"></i>
+            <input class="search2" type="text" placeholder="  Search by product, category or collection" />
+            <i class="icon"></i>
+          </form>
+        </div>
+        <div>
+          <span><a><i class="fas fa-grip-lines-vertical"></i></a></span>
+          <div>
+            <a href="#"> <span id="tag"> Login</span> </a>
+          </div>
+
+          <span><a href="#" ><i class="far fa-heart"></i></a></span>
+          <span><a href="#"><i class="fas fa-shopping-bag"></i></a></span>
+        </div>
+      </div>
+      <hr style="border: none; width: 100%;">  
+    </div>
+  </header>
+
+  <div id="total-signup-page">
+
+
+    <div class="left-signup">
+      <img src="https://images.bewakoof.com/web/group-19-1617704502.png">
+    </div>
+    <div class="right-signup">
+
+
+      <div>
+        <h2>Register Yourself !</h2>
+        <h3>Hi new buddy, let's get you started with the bewakoofi!</h3>
+
+        <form id="register-form">
+
+          <input class="typing" id="name" type="text" placeholder="Full Name" required>
+          <input class="typing" id="email" type="email" placeholder="Email" required>
+          <input class="typing" id="password" type="password" placeholder="Password" required>
+          <input class="typing" id="confirm-password" type="password" placeholder="Confirm Password" required>
+          <input id="btn" type="submit" value="REGISTER">
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+
+
+
+<script>
+  const registerForm = document.getElementById('register-form');
+
+  registerForm.addEventListener('submit', function (event) {
+    event.preventDefault(); // prevent form submission and page reload
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const confirmPasswordInput = document.getElementById('confirm-password');
+
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const password = passwordInput.value;
+    const confirmPassword = confirmPasswordInput.value;
+
+    // Check if passwords match
+    if (password !== confirmPassword) {
+      alert('Passwords do not match');
+      return;
+    }
+
+    // Store user data in local storage
+    const user = {
+      name: name,
+      email: email,
+      password: password
+    };
+    localStorage.setItem('loggedInUser', JSON.stringify(user));
+
+    alert('Registration successful! Please log in.');
+
+    // Redirect to login page
+    window.location.href = 'loginmain.html';
+  });
+
+</script>
+
+</html>
