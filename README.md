@@ -70,4 +70,3 @@ https://github.com/ShaswatSRaghuvansi/squalid-direction-3013.git
 
 
 Here you can see the project: https://beunikue.netlify.app/
-
