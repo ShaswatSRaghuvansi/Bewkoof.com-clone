@@ -10,7 +10,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,500;1,200;1,400;1,500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./style/home_style.css">
     
+<style>
+    ::-webkit-scrollbar {
+              width: 8px;
+              background-color: #66FF00;
+          }
+    ::-webkit-scrollbar-thumb {
+              background: linear-gradient(#ff0040, #0011ff);
+              border-radius: 8px;
+          }
+          
+    ::-webkit-scrollbar-thumb:hover {
+              background: linear-gradient(#0011ff , #ff0040);
+          }
 
+</style>
   </head>
   <body>
     
@@ -20,23 +34,26 @@
         </div> -->
         <div class="mainheadrow">
           <div>
-            <a href="home.html"><img src="./pictures/Logo.jpg" alt="beUnikue.com logo" style="height: 35px;"/></a>
+            <a href="index.html"><img src="./pictures/Logo.jpg" alt="beUnikue.com logo" style="height: 35px;"/></a>
           </div>
           
 
           <div>
-            <div style="display: inline-block">
-              <span><a href="#">MEN</a> </span>
-              <span><a href="#">WOMEN</a></span>
-              <span><a href="#">ACCESSORIES</a></span>
+            <div >
+              <span class="navbar-links"><a href="#">MEN</a> </span>
+              <span class="navbar-links" ><a href="#">WOMEN</a></span>
+              <span class="navbar-links"><a href="#">ACCESSORIES</a></span>
             </div>
+            
           </div>
           <div>
             <form action="">
               
               <i id="search" class="fas fa-search"></i>
-              <input class="search2" type="text" placeholder="  Search by product, category or collection" />
+              <input class="search2" type="text" placeholder=" Search by product, category or collection" />
               <i class="icon"></i>
+              
+
             </form>
           </div>
           <div>
@@ -53,7 +70,9 @@
       </div>
     </header>
    
-  
+    
+
+    <script src="index.js"></script>
     <div class="top-slider">
       <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" navigation="true" space-between="10"
       slides-per-view="3" autoplay-delay="3000" autoplay-disable-on-interaction="false">
@@ -261,8 +280,8 @@
     <footer>
       <div class="line8">
         <div class="container" style="display: flex;">
-          <div>
-            <a href="home.html"><img style=" width: 250px; height: 50px;" src="pictures\Logo.jpg" alt=""/>
+          <div class="footer-logo">
+            <a href="index.html"><img style=" width: 250px; height: 50px;" src="pictures\Logo.jpg" alt=""/>
             </a>
             
           </div>

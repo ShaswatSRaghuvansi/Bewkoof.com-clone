@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Complete</title>
+    <link rel="stylesheet" href="./style/ordercomplete.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,500;1,200;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+   
+    <script
+    src="https://kit.fontawesome.com/f1eae3bf56.js"
+    crossorigin="anonymous"
+  ></script>
+</head>
+
+
+<body>
+    
+   <div class="box">
+       
+          <div>
+              <div id="refer_earn">
+                  <img style="width: 350px; height: 290px;" src="	https://images.bewakoof.com/web/discounts-and-offers-1605624171.gif" alt="">
+            </div>
+
+            <div>
+                <div >
+                    <img style="width: 100%;" src="https://images.bewakoof.com/uploads/grid/app/desktop-survey-1673330211.jpg" 
+                    alt="">
+                </div>
+            </div>
+
+
+             </div>
+          </div>
+  <div>
+          <div style="text-align: center;">
+            We think you'd like these
+          </div>
+
+          <div style="text-align: center;">
+            Track and manage all your orders<br>
+            
+          </div>
+
+          <div>
+           <a href="index.html"> <button>View Orders</button></a>
+          </div>
+  </div>    
+
+   </div>
+</body>
+</html>
+
+
+<script>
+ let tag = document.getElementById("tag")
+    console.log(tag)
+  let users = JSON.parse(localStorage.getItem("users")) 
+  let name=(users[users.length-1].Name)
+  tag.innerHTML=name
+  console.log(name)
+
+
+
+
+  var viewOrdersBtn = document.querySelector('button');
+var trackOrders = document.querySelector('div:nth-of-type(2)');
+
+viewOrdersBtn.addEventListener('click', function() {
+  trackOrders.classList.toggle('visible');
+});
+
+</script>
