@@ -15,11 +15,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
     </head>
-    <body>
+<body>
+
+    <!-- stylesheet  -->
     <style>
 
 *{
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: rgb(85, 85, 85);
 text-align: center;
 font-size:17px ;
@@ -47,6 +49,7 @@ justify-content: space-around;
 .logo>img{
  
     width: 120px;
+    padding-left: 50px;
 }
 a{
     text-decoration: none;
@@ -128,14 +131,14 @@ border: 1px solid rgb(255, 255, 255) ;
     border:1px solid rgb(255, 38, 81);
 }
  
- #add_products{
+ #update,#add_products{
     width:150px;
     height: 60px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     padding: 10px 25px 10px;
 
  }
- #add_products:hover{
+ #update:hover,#add_products:hover{
     background-color: black;
     color: white;
  }
@@ -161,179 +164,142 @@ border: 1px solid rgb(255, 255, 255) ;
  }
 
  .add{
-   
-  
     padding: 5px 5px 5px;
     margin-bottom: 15px;
     display: flex;
     align-items: center;
 justify-content: center;
-
  }
- </style>
+    </style>
         
 
-
-
-<div class="Navbar">
-    <a href="index.html">
-<div class="logo" style="width: 300px;"><img src="logo.jpg" alt=""></div></a>
-<div class="navmenu">
+   <!-- navbar-section       -->
+   <div class="Navbar">
+   <div class="logo"><img src="logo.jpg" alt=""></div>
+    <div class="navmenu">
     <a href="#">Products</a>
     <a href="#">Orders</a>
     <a href="#">Delivered</a>
     <a href="index.html">Account</a>
-</div>
+    </div>
     
-</div>
+   </div>
+   <!-- nav ended  -->
+ 
+   <!-- content table  -->
+  <div class="table">
 
-<div class="table">
-    <div class="add">
+       <!--starts form section for data to be populated  -->
+       <div class="add">
         <div class="addform">
             <h1 style="font-size: 20px;">Add details for new product⬇️</h1>
             <input type="text" id="addid" placeholder="Product id">
-        <input type="text" id="addtitle" placeholder="Title">
-        <input type="text" id="addimage" placeholder="Image URL">
-        <input type="text" id="addprice" placeholder="Price">
-        <input type="text" id="addsale" placeholder="Sale Price">
-
+            <input type="text" id="addtitle" placeholder="Title">
+            <input type="text" id="addimage" placeholder="Image URL">
+            <input type="text" id="addprice" placeholder="Price">
+            <input type="text" id="addsale" placeholder="Sale Price">
         </div>
         <button type="submit" id="add_products">Add Products</button>
+        <button id="update">Update</button>
+       </div>
+       <!--ends  form section for data to be populated -->
 
-    </div>
-    <div class="th">
+
+       <!-- starts thead part for admit data to be populated  -->
+       <div class="th">
         <h3>Product</h3>
         <h3>ID</h3>
         <h3>Name</h3>
-       
         <h3>Price</h3>
         <h3>Sale</h3>
-      
         <h3>Edit Prodct</h3>
         <h3>Delete Product</h3>
-    </div>
-    <div class="datatable" id="products">
+          </div>
+       <!-- starts thead part for admit data to be populated  -->
 
-            <!-- <th>Product</th>
-            <th>ID</th>
-          
-            <th>Desc</th>
-            <th>Price</th>
-            <th>Sale</th>
-            <th>Edit</th>
-            <th>Delete</th> -->
-         
-         
+ 
+       <!-- starts data append table  -->
+       <div class="datatable" id="products">
+       </div>
+      <!-- ends data append table  -->
     
-        <div>
-    
-    
-        </tbody>
-      
-    </table>
-
-</div>
 
 
+  </div>
+</body>
 
-    </body>
-    <script>
+
+ <!-- script tag starts  -->
+<script>
 const url=`http://localhost:8000/product`
 
+// form submint button
 let addbtn=document.getElementById("add_products")
-let addtitle=document.getElementById("addtitle")
-let addimage=document.getElementById("addimage")
-let addprice=document.getElementById("addprice")
 
-let addsale=document.getElementById("addsale")
+// all form section tags being catch here 
+let addid=document.getElementById("addid");
+let addtitle=document.getElementById("addtitle");
+let addimage=document.getElementById("addimage");
+let addprice=document.getElementById("addprice");
+let addsale=document.getElementById("addsale");
 
 
-//const url="https://v1.nocodeapi.com/dev_rohit1438/google_sheets/nBSXayJbTkuKqgDf?tabId=Sheet1"
-//https://fakestoreapi.com/products/
-//const url="https://fakestoreapi.com/products/"
+// final backend data to be populated here 
 let datatable=document.getElementById("products")
 
 let dataarr;
+
+// fetch function responsible for all displaying data
 async function fetchData(url){
-try{
-
+ try{
     let data=await fetch(url)
-data=await data.json()
-// await dataarr.push(data.data)
- dataarr=await data
-// let productdata=localStorage.setItem("productdata",JSON.stringify(data))
-await displayProduct(dataarr)
+    data=await data.json()
+    dataarr=await data
+    await displayProduct(dataarr)
+    console.log(dataarr)
 
-console.log(dataarr)
-
-}catch(err){
+ }catch(err){
     console.log(err)
+ }
 }
 
-}
+// fetch function calling 
 fetchData(url)
 
-
-
-
-
+// on submit form event-listener 
 addbtn.addEventListener("click",addproduct);
 
+// add product-Post request function 
 async function addproduct(){
-console.log("clicked")
-try{
-let addobj={
+ try{
+  let addobj={
     id:addid.value,
     offer:addtitle.value,
     image:addimage.value,
     price:addprice.value,
     discount:addsale.value
-    
-}
-console.log(addobj)
-let add_req=await fetch(url,{
-method:"POST",
-headers:{
+   }
+  let add_req=await fetch(url,{
+  method:"POST",
+  headers:{
     "Content-Type" : 'application/json'
-},
-body:JSON.stringify(addobj)
-
-})
-
-
-    }catch(err){
-        console.log(err)
+  },
+  body:JSON.stringify(addobj)
+  })
+ }catch(err){
+         console.log(err)
     }
     fetchData(url)
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// admin side all products population function 
 function displayProduct(data){
-
     datatable.textContent=""
     data.forEach((product) => {
+
+     //  creating all required tags    
         let card=document.createElement("div")
-card.setAttribute("class","card")
-
-
+        card.setAttribute("class","card")
         let image=document.createElement("img")  
         let id=document.createElement("h3") 
         let name=document.createElement("h3")   
@@ -343,90 +309,95 @@ card.setAttribute("class","card")
         let edit=document.createElement("button") 
         edit.setAttribute("id","edit")
         let del=document.createElement("button") 
-    del.setAttribute("id","delete")
+        del.setAttribute("id","delete")
+
+
     
+        //assigning data to every tag from server
+        image.src=product.image
+        id.innerText=product.id
+        name.innerText=product.offer
+        price.innerText=product.price
+        sale.innerText=product.discount
+        edit.innerText="Edit"
+        del.innerText="Delete"
+        card.append(image,id,
+        name,price,sale,edit,del)
+
+        // card.append(del,edit)
+         datatable.append(card)
 
 
+        // console.log(product.row_id)
 
+        delid=product.id
 
+        editid=product.id
 
+        edit
+        // ********************************************************
+        edit.addEventListener("click",()=>{
+            addid.value=product.id;
+            addtitle.value=product.title;
+            addimage.value=product.image;
+            addprice.value=product.price;
+            addsale.value=product.discount;
+            console.log(product.id)
+        })
+         
+        // *********************************************************
 
+        //delet product
+      del.addEventListener("click",delproduct)
 
+         //  delete from dom using delete request on json-server 
+       async function delproduct(){
+           try{
+              let delreq=await fetch(`${url}/${product.id}`,{
+               method:"delete",
+               headers:{
+                       "Content-Type": "application/json"
+                      },
+              })
+            }catch(err){
+                    console.log(err)
+            }
 
-
-
-
-
-
-
-
-
-
-
-
-
-  image.src=product.image
-
-    id.innerText=product.id
-    name.innerText=product.offer
-    price.innerText=product.price
-    sale.innerText=product.discount
-    edit.innerText="Edit"
-    del.innerText="Delete"
-   card.append(image,id,
-name,price,sale,edit,del)
-
-// card.append(del,edit)
-    datatable.append(card)
-
-
-    // console.log(product.row_id)
-
-delid=product.id
-
-editid=product.id
-
-
-//delet product
-del.addEventListener("click",delproduct)
-
-
-async function delproduct(){
-try{
-
-    let delreq=await fetch(`${url}/${product.id}`,{
-method:"delete",
-headers:{
-    "Content-Type": "application/json"
-},
-
-
-    })
-
-
-}catch(err){
-    console.log(err)
-}
-await fetchData(url)
-
-}
-
-
-/////////////////
-
-
-
-
-
-
-
+            await fetchData(url)
+      }
+// ******************************************************************
 
     });
-
-
-
-
 }
 
-    </script>
-    </html>
+// catching update button here 
+let updatebtn=document.getElementById("update");
+update.addEventListener("click",(e)=>{
+    e.preventDefault();
+    let id=addid.value;
+    let offer=addtitle.value;
+    let image=addimage.value;
+    let price=addprice.value;
+    let discount=addsale.value;
+
+    console.log(id,offer,image,price,discount)
+    updateProduct(id,offer,image,price,discount);
+    fetchData(url)
+})
+
+// update function 
+function updateProduct(id,offer,image,price,discount){
+    let data={
+        id,image,offer,discount,price
+    }
+    fetch(`${url}/${id}`,{
+      method:'PUT',
+      body:JSON.stringify(data),
+      headers:{"Content-Type":"application/json"}
+    })
+   console.log(data)
+  }
+
+
+</script>
+</html>

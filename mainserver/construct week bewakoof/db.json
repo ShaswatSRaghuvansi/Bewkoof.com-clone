@@ -1,13 +1,11 @@
 {
   "product": [
     {
+      "id": 1,
       "image": "https://images.bewakoof.com/t640/men-s-blue-the-panda-way-oversized-t-shirt-580637-1676876264-1.jpg",
-      "offer": "OVERSIZED FIT",
-      "rating": 4.6,
-      "title": "Men's Blue The Panda Way Graphic Printed Oversized T-shirt",
-      "discount": 499,
-      "price": "₹1499",
-      "id": 1
+      "offer": "Men's Blue The Panda Way Graphic Printed Oversized T-shirt",
+      "discount": "1399",
+      "price": "₹1499"
     },
     {
       "image": "https://images.bewakoof.com/t640/men-s-purple-justice-league-society-graphic-printed-oversized-t-shirt-581274-1676971303-1.jpg",
@@ -19,13 +17,11 @@
       "id": 2
     },
     {
+      "id": 3,
       "image": "https://images.bewakoof.com/t640/gohan-half-sleeve-t-shirt-512884-1655993277-1.jpg",
-      "offer": "BUY 3 FOR 999",
-      "rating": 4.4,
-      "title": "Men's Black Gohan Graphic Printed T-shirt",
-      "discount": 449,
-      "price": "₹999",
-      "id": 3
+      "offer": "Men's Black Gohan Graphic Printed T-shirt",
+      "discount": "300",
+      "price": "₹999"
     },
     {
       "image": "https://images.bewakoof.com/t640/men-s-black-the-panda-way-oversize-fit-full-sleeve-t-shirt-580633-1676876417-1.jpg",
@@ -89,15 +85,6 @@
       "discount": 399,
       "price": "₹999",
       "id": 10
-    },
-    {
-      "image": "https://images.bewakoof.com/t640/men-s-blue-oversized-fit-t-shirt-439435-1667519510-1.jpg",
-      "offer": "OVERSIZED FIT",
-      "rating": 4.3,
-      "title": "Men's Blue Oversized Fit T-shirt",
-      "discount": 323,
-      "price": "₹799",
-      "id": 14
     },
     {
       "image": "https://images.bewakoof.com/t640/men-s-black-the-ghost-graphic-printed-oversized-fit-t-shirt-503830-1667515234-1.jpg",
