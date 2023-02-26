@@ -17,7 +17,7 @@ text-shadow:2px black;
 
 }
 body{
-    background-color:#edd8ff ;
+    background-color:#EDF1D6 ;
    
 }
 .login-form{
@@ -152,34 +152,59 @@ let mobileel=mobile.value
 let regdata=JSON.parse(localStorage.getItem("regdata"))
 
 
+let  otppin;
 
-var otppin;
 otpbtn.addEventListener("click",()=>{
-    let obj={
-        mobile:mobileel,
-        otp:otpel
-    }
-    console.log(obj)
- otppin=Math.ceil(Math.random()*10000)
+ 
+    
+if(mobile.value=="" ){
+    logintext.innerText="PLease fill all the details"
+    setTimeout(() => {
+    logintext.innerText=("Register Now")
+ 
+}, 900);
+
+}
+
+
+
+
+
+    // console.log(obj)
+    otppin=Math.ceil(Math.random()*10000)
 alert("OTP sent to registered mobile number")
 
 alert(`Your OTP is ${otppin} ` )
 
-
+let obj={
+        mobile:mobileel,
+        otp:otpel
+    }
 
 })
-
+console.log(otppin)
 loginbtn.addEventListener("click",()=>{
-    // console.log(otppin)
+
     
-//     if(otppin==undefined){
-//       otpalert.innerText="Mobile No & OTP Required to Log-in"
-//     }else if(otpel==otppin){
-//     otpalert.innerText="log-in Successfull"  
+    // if(otppin==undefined){
+    //   otpalert.innerText="Mobile No & OTP Required to Log-in"
+    // }else if(otpel==otppin){
+
+
+        setTimeout(() => {
+            otpalert.innerText="log-in Successfull"  
+ 
+}, 900);
+
+
+setTimeout(() => {
+            
+    window.location.href="admin.html"
+}, 2000);
 // }
 
 
-window.location.href="admin.html"
+
   
 })
 

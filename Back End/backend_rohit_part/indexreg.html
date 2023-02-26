@@ -16,8 +16,7 @@ text-shadow:2px black;
 
 }
 body{
-    background-color:#98ffa7 ;
-   
+ background-color:#EDF1D6 ; 
 }
 .login-form{
    margin: auto;
@@ -160,7 +159,18 @@ regobj.email=regemail.value,
 regobj.number=regnumber.value
 console.log(regobj)
 
-regarr.push(regobj)
+
+if(regobj.name=="" || regobj.email==""||regobj.number==""){
+    logintext.innerText="PLease fill all the details"
+    setTimeout(() => {
+    logintext.innerText=("Register Now")
+ 
+}, 900);
+
+}else{
+
+
+    regarr.push(regobj)
 localStorage.setItem("regdata",JSON.stringify(regarr))
 
 setTimeout(() => {
@@ -173,6 +183,11 @@ setTimeout(() => {
   
     window.location.href="index.html"
 }, 2000);
+
+}
+
+
+
 
 })
 

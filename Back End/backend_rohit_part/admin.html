@@ -26,7 +26,7 @@ font-size:17px ;
 
 }
 body{
-    background-color:#edd8ff ;
+    background-color:#EDF1D6 ;
    
 }
 .Navbar{
@@ -61,14 +61,14 @@ display: flex;
 flex-direction: column;
 justify-content: space-around;
     width: 95%;
-border: 3px solid white;
+/* border: 3px solid white; */
 border-radius: 7px;
 
 margin: auto;
 }
 thead{
     border-radius: 5px;
-    background-color:white;
+    /* background-color:white; */
     border: none;
 }
 th{
@@ -79,11 +79,15 @@ th{
     display: flex;
     justify-content: space-around;
     align-items: center;
-height: 50px;
-border: 1px solid white;
+height: 100px;
+/* border: 1px solid white; */
+margin: 5px;
+box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
 }
 
 .th{
+    width: 100%;
+    border: 5px solid rgb(255, 255, 255);
     display: flex;
     justify-content: space-around;
     align-items: center; 
@@ -127,7 +131,7 @@ border: 1px solid rgb(255, 255, 255) ;
  #add_products{
     width:150px;
     height: 60px;
-    
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     padding: 10px 25px 10px;
 
  }
@@ -139,8 +143,15 @@ border: 1px solid rgb(255, 255, 255) ;
     display: flex;
     flex-direction: column;
     width: 400px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    margin-right: 10px;
+   align-items:center;
+   background-color: white;
+   padding-bottom: 10px;
+ 
  }
  .addform>input{
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
     width: 350px;
     margin: 3px;
     padding: 5px;
@@ -150,12 +161,14 @@ border: 1px solid rgb(255, 255, 255) ;
  }
 
  .add{
-    border: 1px solid rgb(255, 255, 255);
+   
+  
     padding: 5px 5px 5px;
-
+    margin-bottom: 15px;
     display: flex;
     align-items: center;
-   margin: auto;
+justify-content: center;
+
  }
  </style>
         
@@ -168,13 +181,36 @@ border: 1px solid rgb(255, 255, 255) ;
     <a href="#">Products</a>
     <a href="#">Orders</a>
     <a href="#">Delivered</a>
-    <a href="#">Account</a>
+    <a href="index.html">Account</a>
 </div>
     
 </div>
 
 <div class="table">
+    <div class="add">
+        <div class="addform">
+            <h1 style="font-size: 20px;">Add details for new product⬇️</h1>
+            <input type="text" id="addid" placeholder="Product id">
+        <input type="text" id="addtitle" placeholder="Title">
+        <input type="text" id="addimage" placeholder="Image URL">
+        <input type="text" id="addprice" placeholder="Price">
+        <input type="text" id="addsale" placeholder="Sale Price">
 
+        </div>
+        <button type="submit" id="add_products">Add Products</button>
+
+    </div>
+    <div class="th">
+        <h3>Product</h3>
+        <h3>ID</h3>
+        <h3>Name</h3>
+       
+        <h3>Price</h3>
+        <h3>Sale</h3>
+      
+        <h3>Edit Prodct</h3>
+        <h3>Delete Product</h3>
+    </div>
     <div class="datatable" id="products">
 
             <!-- <th>Product</th>
@@ -185,29 +221,8 @@ border: 1px solid rgb(255, 255, 255) ;
             <th>Sale</th>
             <th>Edit</th>
             <th>Delete</th> -->
-            <div class="th">
-                <h3>Product</h3>
-                <h3>ID</h3>
-                <h3>Name</h3>
-               
-                <h3>Price</h3>
-                <h3>Sale</h3>
-              
-                <h3>Edit Prodct</h3>
-                <h3>Delete Product</h3>
-            </div>
-            <div class="add">
-                <div class="addform">
-                    <input type="text" id="addid" placeholder="Product id">
-                <input type="text" id="addtitle" placeholder="Title">
-                <input type="text" id="addimage" placeholder="Image URL">
-                <input type="text" id="addprice" placeholder="Price">
-                <input type="text" id="addsale" placeholder="Sale Price">
-
-                </div>
-                <button type="submit" id="add_products">Add Products</button>
-
-            </div>
+         
+         
     
         <div>
     
@@ -223,6 +238,15 @@ border: 1px solid rgb(255, 255, 255) ;
     </body>
     <script>
 const url=`http://localhost:8000/product`
+
+let addbtn=document.getElementById("add_products")
+let addtitle=document.getElementById("addtitle")
+let addimage=document.getElementById("addimage")
+let addprice=document.getElementById("addprice")
+
+let addsale=document.getElementById("addsale")
+
+
 //const url="https://v1.nocodeapi.com/dev_rohit1438/google_sheets/nBSXayJbTkuKqgDf?tabId=Sheet1"
 //https://fakestoreapi.com/products/
 //const url="https://fakestoreapi.com/products/"
@@ -248,8 +272,62 @@ console.log(dataarr)
 }
 fetchData(url)
 
+
+
+
+
+addbtn.addEventListener("click",addproduct);
+
+async function addproduct(){
+console.log("clicked")
+try{
+let addobj={
+    id:addid.value,
+    offer:addtitle.value,
+    image:addimage.value,
+    price:addprice.value,
+    discount:addsale.value
+    
+}
+console.log(addobj)
+let add_req=await fetch(url,{
+method:"POST",
+headers:{
+    "Content-Type" : 'application/json'
+},
+body:JSON.stringify(addobj)
+
+})
+
+
+    }catch(err){
+        console.log(err)
+    }
+    fetchData(url)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function displayProduct(data){
 
+    datatable.textContent=""
     data.forEach((product) => {
         let card=document.createElement("div")
 card.setAttribute("class","card")
@@ -266,6 +344,26 @@ card.setAttribute("class","card")
         let del=document.createElement("button") 
     del.setAttribute("id","delete")
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   image.src=product.image
 
     id.innerText=product.id
@@ -279,11 +377,50 @@ name,price,sale,edit,del)
 
 // card.append(del,edit)
     datatable.append(card)
-// console.log(product.row_id)
+
+
+    // console.log(product.row_id)
+
+delid=product.id
+
+editid=product.id
+
+
+//delet product
+del.addEventListener("click",delproduct)
+
+
+async function delproduct(){
+try{
+
+    let delreq=await fetch(`${url}/${product.id}`,{
+method:"delete",
+headers:{
+    "Content-Type": "application/json"
+},
+
+
+    })
+
+
+}catch(err){
+    console.log(err)
+}
+await fetchData(url)
+
+}
+
+
+/////////////////
+
+
+
+
+
+
+
+
     });
-
-
-
 
 
 
