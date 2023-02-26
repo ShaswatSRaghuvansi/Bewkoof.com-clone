@@ -157,11 +157,13 @@ body{
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
             border-radius: 10px;
             text-align: center;
-            height: 400px;
-            background-color: #fdd835;
+            height: 500px;
+            /* background-color: #fdd835; */
             margin-left: 20px;
-          
-            /* background-color: rgb(211, 211, 20); */
+            background-color: #FFE53B;
+background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
+
+         
         }
         #cont{
             display: grid;
@@ -172,32 +174,35 @@ body{
         }
         .card{
            
-        
-            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-            
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+            /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+            text-align: left;
         }
-
+.card>button{
+    align-items: center;
+}
         .card>img{
-            height: 250px;
+          
+              height: 250px;
             width:250px;
-            
         }
 
         .cart{
-            background-color:#ff0081;
-            color: #fff;
-            height: 35px;
-            border: 0px;
-            border-radius: 8px;
-            margin-bottom: 20px;
+            background: rgb(29,146,253);
+background: linear-gradient(90deg, rgba(29,146,253,0.9220938375350141) 29%, rgba(69,85,252,0.9473039215686274) 71%);
+   margin-bottom: 20px;
+   border: 0px;
+   height: 35px;
+   width: 120px;
+   border-radius: 15px;
+   color: #eaeaea;
+   margin-left: 70px;
+   margin-top: 10px;
         
         }
         .cart:hover{
-            background-color:#ff0081;
-            color: #fff;
-            font-size: medium;
-        font-weight: bolder;
-        width: 100px;
+            width: 150px;
+          height: 40px;
         }
 
         #searh_card{
@@ -260,9 +265,61 @@ body{
             margin-top: 40px;
             width: 200px;
         }
+        #lower{
+            width: 250px;
+        padding: 10px 10px 10px;
+        margin: 5px;
+        border: none;
+        outline: none;
+        border-radius: 3px;
 
+        }
+        #upper{
+            width: 250px;
+        padding: 10px 10px 10px;
+        margin: 5px;
+        border: none;
+        outline: none;
+        border-radius: 3px;
+        }
+      /* input{
+        width: 250px;
+        padding: 10px 15px 10px;
+        margin: 5px;
+        border: none;
+        outline: none;
+        border-radius: 3px;
+      } */
 
-    
+       #filter-btn{
+
+        background: rgb(29,146,253);
+background: linear-gradient(90deg, rgba(29,146,253,0.9220938375350141) 29%, rgba(69,85,252,0.9473039215686274) 71%);
+   margin-bottom: 20px;
+   border: 0px;
+   height: 35px;
+   width: 150px;
+   border-radius: 15px;
+   color: #eaeaea;
+   margin-left: 10px;
+   margin-top: 10px;
+
+       
+     } 
+
+    *{
+        font-family:Arial, Helvetica, sans-serif;
+    }
+   #sort_rating{
+   width: 250px;
+   margin-top: 20px;
+
+   }
+
+   #sort_discount{
+   width: 250px;
+
+   }
 
     </style>
 
@@ -279,7 +336,9 @@ body{
               </div> -->
               <div class="mainheadrow">
                 <div>
-                  <a href="index.html"><img src="./picture/logo.jpg" alt="beUnikue.com logo" style="height: 35px;"/></a>
+
+                  <a href="./index.html"><img src="./picture/logo.jpg" alt="beUnikue.com logo" style="height: 35px;"/></a>
+
                 </div>
                 
       
@@ -323,13 +382,13 @@ body{
      
          <div id="main">
              <div id="btn">
-                <img id="img-filter" src="./picture/logo.png.png" alt="">
-             <h4>Filters</h4>
+                <img id="img-filter" src="./picture/logo.jpg" alt="">
+             <!-- <h4>Filters</h4> -->
              <p>Filter According to Price</p>
              <div id="filter">
                  <input type="number" id="lower" placeholder="Pirce from"/>
                  <input type="number" id="upper" placeholder="price to" />
-                 <button id="filter-btn">Filter</button>
+                 <button id="filter-btn">FILTER</button>
                </div>
      
           <div>
@@ -489,7 +548,7 @@ sort_discount.addEventListener("change",()=>{
                      alert("Product added to Your cart")   
                 })
 
-        div.append(image,id,title,offer,discount,price,Rating,cart_btn)
+        div.append(image,title,discount,price,Rating,cart_btn)
         cont.append(div)
 
         });
