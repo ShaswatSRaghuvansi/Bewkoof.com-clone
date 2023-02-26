@@ -53,7 +53,7 @@ https://github.com/ShaswatSRaghuvansi/squalid-direction-3013
 ## Related Links
 https://github.com/ShaswatSRaghuvansi/squalid-direction-3013.git
 
-![beUnique_FrontPage](https://user-images.githubusercontent.com/115460278/221366235-e6262d38-9941-4984-a00d-b90b52d33c04.jpg)
+![beUnique_FrontPage](https://user-images.githubusercontent.com/115460278/221406946-ca553efa-5913-49bd-b0b7-eeabfd76c79e.png)
 
 ![beUnique_Payment_Gateway](https://user-images.githubusercontent.com/115460278/221406817-12431fef-9e78-4eb4-9b85-f90bc494ceea.png)
 
