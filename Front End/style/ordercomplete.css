@@ -110,6 +110,11 @@ span{
     margin-left: 40%;
     margin-bottom: 5%;
 }
+#refer_earn img {
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
 
 h4 {
     margin-top: -145px;
@@ -140,9 +145,17 @@ button {
     border: 1px solid rgb(66, 162, 162);
     font-size: 16px;
 }
-.box{
-/* border: 2px solid red; */
-margin-top: 40px;
+button {
+  background: linear-gradient(to bottom, #4c9eaf, #00ff11);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 
+body {
+  background-color: #f7f7f7;
+}
