@@ -3,8 +3,6 @@
 
 https://github.com/ShaswatSRaghuvansi/squalid-direction-3013
 
-### Bewakoof_Clone
-
 ## Powered By
 <ul>
 <li>HTML</li>
