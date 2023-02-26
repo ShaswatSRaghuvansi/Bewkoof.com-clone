@@ -24,6 +24,7 @@ background: linear-gradient(90deg, rgba(253,29,29,0.5803571428571428) 24%, rgba(
     border: 2px solid rgb(0, 0, 0);
     width: 87%;
     min-height: 520px;
+   
 }
 
 #lower_box>div:nth-child(1) {
@@ -74,10 +75,13 @@ p {
     margin-top: 12%;
     border-radius: 5px;
 
+    background-color: #f3f3f3;
+
 }
 
 #lower_right_box>div:nth-child(1) {
     margin-left: 10px;
+    
 }
 
 #card_num {
